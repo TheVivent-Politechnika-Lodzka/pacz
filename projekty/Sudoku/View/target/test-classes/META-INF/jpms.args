@@ -1,0 +1,4 @@
+--patch-module
+ViewProject=_
+--add-reads
+ViewProject=ALL-UNNAMED

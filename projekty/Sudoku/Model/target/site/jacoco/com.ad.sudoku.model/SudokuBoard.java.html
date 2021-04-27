@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pl"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>SudokuBoard.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">ModelProject</a> &gt; <a href="index.source.html" class="el_package">com.ad.sudoku.model</a> &gt; <span class="el_source">SudokuBoard.java</span></div><h1>SudokuBoard.java</h1><pre class="source lang-java linenums">package com.ad.sudoku.model;
+
+import com.ad.sudoku.model.actionevents.SudokuActionEvent;
+import com.ad.sudoku.model.exceptions.SudokuArrayIndexOutOfBoundsException;
+import com.ad.sudoku.model.solvers.BacktrackingSudokuSolver;
+import com.ad.sudoku.model.solvers.SudokuSolver;
+import com.google.common.base.MoreObjects;
+import com.google.common.base.Objects;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import javax.persistence.Transient;
+
+@Entity
+@Table
+public class SudokuBoard implements PropertyChangeListener, Serializable, Cloneable {
+    //    &quot;stała&quot;
+    public static final int SIZE = 9;
+
+    // logger
+<span class="fc" id="L35">    private static final Logger logger = Logger.getLogger(SudokuBoard.class.getName(),</span>
+            &quot;com.ad.sudoku.model.lang.sudokuLoggerLocale&quot;);
+
+    @Id
+    @GeneratedValue
+    private long id;
+
+    @Column(unique = true)
+    private String name;
+
+    @Transient
+    private final SudokuSolver solver;
+
+<span class="fc" id="L48">    private boolean autoCheck = false;</span>
+
+<span class="fc" id="L50">    @Transient</span>
+    private transient List&lt;ActionListener&gt; actionListeners = new ArrayList&lt;&gt;();
+
+<span class="fc" id="L53">    @OneToMany(cascade = CascadeType.ALL)</span>
+<span class="fc" id="L54">    private final List&lt;SudokuField&gt; board = Arrays.asList(new SudokuField[81]);</span>
+    //private final List&lt;List&lt;SudokuField&gt;&gt; board = Arrays.asList(new List[9]);
+
+
+<span class="fc" id="L58">    public SudokuBoard() {</span>
+<span class="fc" id="L59">        logger.finest(&quot;SudokuBoard.constructor.creating&quot;);</span>
+<span class="fc" id="L60">        this.solver = new BacktrackingSudokuSolver();</span>
+<span class="fc bfc" id="L61" title="All 2 branches covered.">        for (int i = 0; i &lt; SIZE * SIZE; i++) {</span>
+<span class="fc" id="L62">            board.set(i, new SudokuField());</span>
+<span class="fc" id="L63">            board.get(i).addPropertyChangeListener(this);</span>
+<span class="fc" id="L64">            board.get(i).setBoard(this);</span>
+        }
+        /*for (int i = 0; i &lt; SIZE; i++) {
+            board.set(i, Arrays.asList(new SudokuField[9]));
+            for (int j = 0; j &lt; SIZE; j++) {
+                board.get(i).set(j, new SudokuField());
+                board.get(i).get(j).addPropertyChangeListener(this);
+            }
+        }*/
+<span class="fc" id="L73">        logger.finest(&quot;SudokuBoard.constructor.created&quot;);</span>
+<span class="fc" id="L74">    }</span>
+
+<span class="fc" id="L76">    public SudokuBoard(SudokuSolver solver) {</span>
+<span class="fc" id="L77">        logger.finest(&quot;SudokuBoard.constructor.creating&quot;);</span>
+<span class="fc" id="L78">        this.solver = solver;</span>
+<span class="fc bfc" id="L79" title="All 2 branches covered.">        for (int i = 0; i &lt; SIZE * SIZE; i++) {</span>
+<span class="fc" id="L80">            board.set(i, new SudokuField());</span>
+<span class="fc" id="L81">            board.get(i).addPropertyChangeListener(this);</span>
+<span class="fc" id="L82">            board.get(i).setBoard(this);</span>
+        }
+        /*for (int i = 0; i &lt; SIZE; i++) {
+            board.set(i, Arrays.asList(new SudokuField[9]));
+            for (int j = 0; j &lt; SIZE; j++) {
+                board.get(i).set(j, new SudokuField());
+                board.get(i).get(j).addPropertyChangeListener(this);
+            }
+        }*/
+<span class="fc" id="L91">        logger.finest(&quot;SudokuBoard.constructor.created&quot;);</span>
+<span class="fc" id="L92">    }</span>
+
+    @Override
+    public String toString() {
+<span class="fc" id="L96">        return MoreObjects.toStringHelper(this)</span>
+<span class="fc" id="L97">                .add(&quot;solver&quot;, solver)</span>
+<span class="fc" id="L98">                .add(&quot;name&quot;, name)</span>
+<span class="fc" id="L99">                .add(&quot;autoCheck&quot;, autoCheck)</span>
+<span class="fc" id="L100">                .add(&quot;board&quot;, board)</span>
+<span class="fc" id="L101">                .toString();</span>
+    }
+
+    @Override
+    public boolean equals(Object o) {
+<span class="fc bfc" id="L106" title="All 2 branches covered.">        if (this == o) {</span>
+<span class="fc" id="L107">            return true;</span>
+        }
+<span class="pc bpc" id="L109" title="1 of 4 branches missed.">        if (o == null || getClass() != o.getClass()) {</span>
+<span class="fc" id="L110">            return false;</span>
+        }
+<span class="fc" id="L112">        SudokuBoard that = (SudokuBoard) o;</span>
+<span class="fc bfc" id="L113" title="All 2 branches covered.">        return autoCheck == that.autoCheck</span>
+<span class="pc bpc" id="L114" title="1 of 2 branches missed.">                &amp;&amp; Objects.equal(solver, that.solver)</span>
+<span class="fc bfc" id="L115" title="All 2 branches covered.">                &amp;&amp; Objects.equal(board, that.board);</span>
+    }
+
+    @Override
+    public int hashCode() {
+<span class="fc" id="L120">        return Objects.hashCode(solver, autoCheck, board);</span>
+    }
+
+    @Override
+    public void propertyChange(PropertyChangeEvent evt) {
+        //tutaj obsługa eventu
+<span class="pc bpc" id="L126" title="1 of 2 branches missed.">        if (!autoCheck) {</span>
+<span class="fc" id="L127">            return;</span>
+        }
+
+<span class="nc" id="L130">        int oldValue = (int) evt.getOldValue();</span>
+<span class="nc" id="L131">        int newValue = (int) evt.getNewValue();</span>
+
+<span class="nc" id="L133">        SudokuField field = (SudokuField) evt.getSource();</span>
+        int i;
+<span class="nc" id="L135">        int j = 0;</span>
+        outerloop:
+<span class="nc bnc" id="L137" title="All 2 branches missed.">        for (i = 0; i &lt; SudokuBoard.SIZE; i++) {</span>
+<span class="nc bnc" id="L138" title="All 2 branches missed.">            for (j = 0; j &lt; SudokuBoard.SIZE; j++) {</span>
+<span class="nc bnc" id="L139" title="All 2 branches missed.">                if (this.getField(i, j) == field) {</span>
+<span class="nc" id="L140">                    break outerloop;</span>
+                }
+            }
+        }
+<span class="nc" id="L144">        logger.log(Level.FINE, &quot;SudokuBoard.propertyChange&quot;,</span>
+<span class="nc" id="L145">                new Object[]{oldValue, newValue, i, j});</span>
+
+<span class="nc" id="L147">        setAutoCheck(false);</span>
+<span class="nc bnc" id="L148" title="All 2 branches missed.">        for (ActionListener a : actionListeners) {</span>
+<span class="nc" id="L149">            a.actionPerformed(new SudokuActionEvent(</span>
+                    this, ActionEvent.ACTION_FIRST, &quot;SudokuNotSolvable&quot;,
+<span class="nc" id="L151">                    i, j, checkBoard()));</span>
+<span class="nc" id="L152">        }</span>
+<span class="nc" id="L153">        setAutoCheck(true);</span>
+<span class="nc" id="L154">    }</span>
+
+    public void addActionListener(ActionListener actionListener) {
+<span class="nc" id="L157">        actionListeners.add(actionListener);</span>
+<span class="nc" id="L158">    }</span>
+
+    public void clearBoard() {
+<span class="fc" id="L161">        logger.fine(&quot;SudokuBoard.clearBoard.cleaning&quot;);</span>
+<span class="fc bfc" id="L162" title="All 2 branches covered.">        for (int i = 0; i &lt; SIZE; i++) {</span>
+<span class="fc bfc" id="L163" title="All 2 branches covered.">            for (int j = 0; j &lt; SIZE; j++) {</span>
+<span class="fc" id="L164">                set(i, j, 0);</span>
+            }
+        }
+<span class="fc" id="L167">        logger.fine(&quot;SudokuBoard.clearBoard.cleaned&quot;);</span>
+<span class="fc" id="L168">    }</span>
+
+    public String getName() {
+<span class="nc" id="L171">        return name;</span>
+    }
+
+    public void setName(String name) {
+<span class="fc" id="L175">        this.name = name;</span>
+<span class="fc" id="L176">    }</span>
+
+    public long getId() {
+<span class="nc" id="L179">        return id;</span>
+    }
+
+    public void setId(long id) {
+<span class="nc" id="L183">        this.id = id;</span>
+<span class="nc" id="L184">    }</span>
+
+    public void setAutoCheck(boolean autoCheck) {
+<span class="fc" id="L187">        logger.log(Level.INFO, &quot;SudokuBoard.setAutoCheck&quot;,</span>
+<span class="fc" id="L188">                new Object[]{this.autoCheck, autoCheck});</span>
+<span class="fc" id="L189">        this.autoCheck = autoCheck;</span>
+<span class="fc" id="L190">    }</span>
+
+    public boolean isAutoCheck() {
+<span class="fc" id="L193">        return autoCheck;</span>
+    }
+
+    public SudokuField getField(int row, int col) {
+<span class="fc bfc" id="L197" title="All 8 branches covered.">        if (row &lt; 0 || row &gt; 8 || col &lt; 0 || col &gt; 8) {</span>
+<span class="fc" id="L198">            ArrayIndexOutOfBoundsException e = new ArrayIndexOutOfBoundsException();</span>
+<span class="fc" id="L199">            SudokuArrayIndexOutOfBoundsException wrapper =</span>
+                    new SudokuArrayIndexOutOfBoundsException(
+                            &quot;SudokuArrayIndexOutOfBoundsException.both&quot;, row, col, e);
+
+<span class="fc" id="L203">            logger.log(Level.SEVERE, &quot;SudokuBoard.ArrayIndexOutOfBoundsException.communicate&quot;,</span>
+<span class="fc" id="L204">                    new Object[]{row, col});</span>
+<span class="fc" id="L205">            logger.log(Level.SEVERE, &quot;SudokuBoard.ArrayIndexOutOfBoundsException.exception&quot;, e);</span>
+<span class="fc" id="L206">            throw wrapper;</span>
+        }
+
+<span class="fc" id="L209">        return board.get(row * 9 + col);</span>
+    }
+
+    public int get(int row, int col) {
+<span class="fc bfc" id="L213" title="All 8 branches covered.">        if (row &lt; 0 || row &gt; 8 || col &lt; 0 || col &gt; 8) {</span>
+<span class="fc" id="L214">            ArrayIndexOutOfBoundsException e = new ArrayIndexOutOfBoundsException();</span>
+<span class="fc" id="L215">            SudokuArrayIndexOutOfBoundsException wrapper =</span>
+                    new SudokuArrayIndexOutOfBoundsException(
+                            &quot;SudokuArrayIndexOutOfBoundsException.both&quot;, row, col, e);
+
+<span class="fc" id="L219">            logger.log(Level.SEVERE, &quot;SudokuBoard.ArrayIndexOutOfBoundsException.communicate&quot;,</span>
+<span class="fc" id="L220">                    new Object[]{row, col});</span>
+<span class="fc" id="L221">            logger.log(Level.SEVERE, &quot;SudokuBoard.ArrayIndexOutOfBoundsException.exception&quot;, e);</span>
+<span class="fc" id="L222">            throw wrapper;</span>
+        }
+
+<span class="fc" id="L225">        return board.get(row * 9 + col).getValue();</span>
+    }
+
+    public void set(int row, int col, int number) {
+<span class="fc bfc" id="L229" title="All 8 branches covered.">        if (row &lt; 0 || row &gt; 8 || col &lt; 0 || col &gt; 8) {</span>
+<span class="fc" id="L230">            ArrayIndexOutOfBoundsException e = new ArrayIndexOutOfBoundsException();</span>
+<span class="fc" id="L231">            SudokuArrayIndexOutOfBoundsException wrapper =</span>
+                    new SudokuArrayIndexOutOfBoundsException(
+                            &quot;SudokuArrayIndexOutOfBoundsException.both&quot;, row, col, e);
+
+<span class="fc" id="L235">            logger.log(Level.FINE, &quot;SudokuBoard.ArrayIndexOutOfBoundsException.communicate&quot;,</span>
+<span class="fc" id="L236">                    new Object[]{row, col});</span>
+<span class="fc" id="L237">            logger.log(Level.FINE, &quot;SudokuBoard.ArrayIndexOutOfBoundsException.exception&quot;, e);</span>
+<span class="fc" id="L238">            throw wrapper;</span>
+        }
+<span class="fc" id="L240">        board.get(row * 9 + col).setValue(number);</span>
+<span class="fc" id="L241">    }</span>
+
+    public SudokuRow getRow(int y) {
+
+<span class="fc bfc" id="L245" title="All 4 branches covered.">        if (y &lt; 0 || y &gt; 8) {</span>
+<span class="fc" id="L246">            ArrayIndexOutOfBoundsException e = new ArrayIndexOutOfBoundsException();</span>
+<span class="fc" id="L247">            SudokuArrayIndexOutOfBoundsException wrapper =</span>
+                    new SudokuArrayIndexOutOfBoundsException(
+                            &quot;SudokuArrayIndexOutOfBoundsException.row&quot;, y, e);
+
+<span class="fc" id="L251">            logger.log(Level.FINE, &quot;SudokuBoard.ArrayIndexOutOfBoundsException.row.communicate&quot;,</span>
+<span class="fc" id="L252">                    new Object[]{y});</span>
+<span class="fc" id="L253">            logger.log(Level.FINE, &quot;SudokuBoard.ArrayIndexOutOfBoundsException.row.exception&quot;, e);</span>
+<span class="fc" id="L254">            throw wrapper;</span>
+        }
+
+<span class="fc" id="L257">        SudokuField[] tmp = new SudokuField[SIZE];</span>
+
+<span class="fc bfc" id="L259" title="All 2 branches covered.">        for (int i = 0; i &lt; SIZE; i++) {</span>
+<span class="fc" id="L260">            tmp[i] = board.get(y * 9 + i);</span>
+            //tmp[i] = board.get(y).get(i);
+        }
+
+<span class="fc" id="L264">        return new SudokuRow(tmp);</span>
+    }
+
+    public SudokuColumn getColumn(int x) {
+<span class="fc bfc" id="L268" title="All 4 branches covered.">        if (x &lt; 0 || x &gt; 8) {</span>
+<span class="fc" id="L269">            ArrayIndexOutOfBoundsException e = new ArrayIndexOutOfBoundsException();</span>
+<span class="fc" id="L270">            SudokuArrayIndexOutOfBoundsException wrapper =</span>
+                    new SudokuArrayIndexOutOfBoundsException(
+                            &quot;SudokuArrayIndexOutOfBoundsException.col&quot;, x, e);
+
+<span class="fc" id="L274">            logger.log(Level.FINE, &quot;SudokuBoard.ArrayIndexOutOfBoundsException.col.communicate&quot;,</span>
+<span class="fc" id="L275">                    new Object[]{x});</span>
+<span class="fc" id="L276">            logger.log(Level.FINE, &quot;SudokuBoard.ArrayIndexOutOfBoundsException.col.exception&quot;, e);</span>
+<span class="fc" id="L277">            throw wrapper;</span>
+        }
+
+<span class="fc" id="L280">        SudokuField[] tmp = new SudokuField[SIZE];</span>
+
+<span class="fc bfc" id="L282" title="All 2 branches covered.">        for (int i = 0; i &lt; SIZE; i++) {</span>
+<span class="fc" id="L283">            tmp[i] = board.get(i * 9 + x);</span>
+            //tmp[i] = board.get(i).get(x);
+        }
+<span class="fc" id="L286">        return new SudokuColumn(tmp);</span>
+
+    }
+
+    public SudokuBox getBox(int x, int y) {
+
+<span class="fc bfc" id="L292" title="All 8 branches covered.">        if (x &lt; 0 || x &gt; 8 || y &lt; 0 || y &gt; 8) {</span>
+<span class="fc" id="L293">            ArrayIndexOutOfBoundsException e = new ArrayIndexOutOfBoundsException();</span>
+<span class="fc" id="L294">            SudokuArrayIndexOutOfBoundsException wrapper =</span>
+                    new SudokuArrayIndexOutOfBoundsException(
+                            &quot;SudokuArrayIndexOutOfBoundsException.both&quot;, x, y, e);
+
+<span class="fc" id="L298">            logger.log(Level.FINE, &quot;SudokuBoard.ArrayIndexOutOfBoundsException.communicate&quot;,</span>
+<span class="fc" id="L299">                    new Object[]{x, y});</span>
+<span class="fc" id="L300">            logger.log(Level.FINE, &quot;SudokuBoard.ArrayIndexOutOfBoundsException.exception&quot;, e);</span>
+<span class="fc" id="L301">            throw wrapper;</span>
+        }
+
+<span class="fc" id="L304">        SudokuField[] tmp = new SudokuField[SIZE];</span>
+
+<span class="fc" id="L306">        x = x - (x % 3);</span>
+<span class="fc" id="L307">        y = y - (y % 3);</span>
+
+<span class="fc" id="L309">        int k = 0;</span>
+<span class="fc bfc" id="L310" title="All 2 branches covered.">        for (int i = x; i &lt; x + 3; i++) {</span>
+<span class="fc bfc" id="L311" title="All 2 branches covered.">            for (int j = y; j &lt; y + 3; j++) {</span>
+<span class="fc" id="L312">                tmp[k++] = this.getField(i, j);</span>
+            }
+        }
+
+<span class="fc" id="L316">        return new SudokuBox(tmp);</span>
+    }
+
+    public boolean checkBoard() {
+<span class="fc" id="L320">        logger.info(&quot;SudokuBoard.checkBoard&quot;);</span>
+<span class="fc" id="L321">        SudokuBoard clonedBoard = this.clone();</span>
+<span class="fc" id="L322">        return clonedBoard.solveGame();</span>
+    }
+
+    public boolean solveGame() {
+<span class="fc" id="L326">        logger.info(&quot;SudokuBoard.solveGame&quot;);</span>
+<span class="fc" id="L327">        return solver.solve(this);</span>
+    }
+
+    //    przepisanie, aby nie móc nadpisywać
+    public int[][] getBoard() {
+<span class="fc" id="L332">        int[][] copy = new int[SIZE][SIZE];</span>
+<span class="fc bfc" id="L333" title="All 2 branches covered.">        for (int i = 0; i &lt; SIZE; i++) {</span>
+<span class="fc bfc" id="L334" title="All 2 branches covered.">            for (int j = 0; j &lt; SIZE; j++) {</span>
+<span class="fc" id="L335">                copy[i][j] = board.get(i * 9 + j).getValue();</span>
+                //copy[i][j] = board.get(i).get(j).getValue();
+            }
+        }
+<span class="fc" id="L339">        return copy;</span>
+    }
+
+    @Override
+    public SudokuBoard clone() {
+<span class="fc" id="L344">        SudokuBoard tmp = new SudokuBoard(this.solver);</span>
+
+<span class="fc bfc" id="L346" title="All 2 branches covered.">        for (int i = 0; i &lt; SIZE; i++) {</span>
+<span class="fc bfc" id="L347" title="All 2 branches covered.">            for (int j = 0; j &lt; SIZE; j++) {</span>
+<span class="fc" id="L348">                tmp.set(i, j, this.get(i, j));</span>
+            }
+        }
+<span class="fc" id="L351">        tmp.setAutoCheck(this.isAutoCheck());</span>
+
+<span class="fc" id="L353">        return tmp;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

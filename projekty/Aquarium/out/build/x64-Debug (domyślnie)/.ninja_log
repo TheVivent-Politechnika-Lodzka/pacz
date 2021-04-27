@@ -1,0 +1,14 @@
+# ninja log v5
+17	809	640721181	library/CMakeFiles/Library.dir/src/model/Attraction.cpp.obj	9974c494b8ecf8f1
+12	818	640721181	library/CMakeFiles/Library.dir/src/model/Client.cpp.obj	314e64c1fc5dbb06
+20	926	640721182	library/CMakeFiles/Library.dir/src/repositories/AttractionList.cpp.obj	a6678d2f6ad803d3
+6	799	640726067	library/CMakeFiles/Library.dir/src/model/Client.cpp.obj	3e8241b4a327618a
+14	829	640726067	library/CMakeFiles/Library.dir/src/model/Attraction.cpp.obj	45c0563fbdfbc22d
+12	2532	640726069	library/CMakeFiles/Library.dir/src/model/SingleTicket.cpp.obj	61b7380c5debfa7a
+17	2545	640726069	library/CMakeFiles/Library.dir/src/model/GroupTicket.cpp.obj	64e6b6b271bb7005
+4	2698	640726069	library/CMakeFiles/Library.dir/src/model/Ticket.cpp.obj	9a755940667b36f1
+28	935	640726152	library/CMakeFiles/Library.dir/src/repositories/AttractionList.cpp.obj	9b2669094b756199
+25	2938	640726154	library/CMakeFiles/Library.dir/src/managers/Aquarium.cpp.obj	ee1b2ccfe0d73b63
+15	3010	640726154	library/CMakeFiles/Library.dir/src/model/SingleTicket.cpp.obj	61b7380c5debfa7a
+13	3086	640726154	library/CMakeFiles/Library.dir/src/model/Ticket.cpp.obj	9a755940667b36f1
+18	3188	640726154	library/CMakeFiles/Library.dir/src/model/GroupTicket.cpp.obj	64e6b6b271bb7005

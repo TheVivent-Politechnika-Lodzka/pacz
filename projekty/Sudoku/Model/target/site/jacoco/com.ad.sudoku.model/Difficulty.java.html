@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pl"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Difficulty.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">ModelProject</a> &gt; <a href="index.source.html" class="el_package">com.ad.sudoku.model</a> &gt; <span class="el_source">Difficulty.java</span></div><h1>Difficulty.java</h1><pre class="source lang-java linenums">package com.ad.sudoku.model;
+
+import java.util.Random;
+import java.util.ResourceBundle;
+
+<span class="fc" id="L6">public enum Difficulty {</span>
+
+<span class="fc" id="L8">    EASY(&quot;difficulty.easy&quot;, 5),</span>
+<span class="fc" id="L9">    MEDIUM(&quot;difficulty.medium&quot;, 10),</span>
+<span class="fc" id="L10">    HARD(&quot;difficulty.hard&quot;, 15),</span>
+<span class="fc" id="L11">    SUPERHARD(&quot;difficulty.superhard&quot;, 30);</span>
+
+    private final String text;
+    private final int emptyFields;
+
+<span class="fc" id="L16">    Difficulty(String text, int emptyFields) {</span>
+<span class="fc" id="L17">        this.text = text;</span>
+<span class="fc" id="L18">        this.emptyFields = emptyFields;</span>
+<span class="fc" id="L19">    }</span>
+
+    public int getEmptyFields() {
+<span class="fc" id="L22">        return emptyFields;</span>
+    }
+
+    @Override
+    public String toString() {
+<span class="fc" id="L27">        ResourceBundle bundle = ResourceBundle.getBundle(</span>
+                &quot;com.ad.sudoku.model.lang.sudokuDifficultyLocale&quot;);
+<span class="fc" id="L29">        return bundle.getString(text);</span>
+    }
+
+    public void startGame(SudokuBoard board) {
+<span class="fc" id="L33">        Random r = new Random();</span>
+
+<span class="fc" id="L35">        board.solveGame();</span>
+<span class="fc bfc" id="L36" title="All 2 branches covered.">        while (countEmptySpaces(board) != emptyFields) {</span>
+<span class="fc" id="L37">            board.set(r.nextInt(9), r.nextInt(9), 0);</span>
+        }
+<span class="fc" id="L39">    }</span>
+
+    private int countEmptySpaces(SudokuBoard board) {
+<span class="fc" id="L42">        int result = 0;</span>
+<span class="fc bfc" id="L43" title="All 2 branches covered.">        for (int i = 0; i &lt; SudokuBoard.SIZE; i++) {</span>
+<span class="fc bfc" id="L44" title="All 2 branches covered.">            for (int j = 0; j &lt; SudokuBoard.SIZE; j++) {</span>
+<span class="fc bfc" id="L45" title="All 2 branches covered.">                if (board.get(i, j) == 0) {</span>
+<span class="fc" id="L46">                    result++;</span>
+                }
+            }
+        }
+<span class="fc" id="L50">        return result;</span>
+    }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

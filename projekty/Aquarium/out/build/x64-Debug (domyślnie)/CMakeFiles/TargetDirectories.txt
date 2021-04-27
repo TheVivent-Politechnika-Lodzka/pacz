@@ -1,0 +1,13 @@
+E:/OneDrive - Politechnika Łódzka/semestr 4/pacz/OszlifowanyWengiel/out/build/x64-Debug (domyślnie)/CMakeFiles/check.dir
+E:/OneDrive - Politechnika Łódzka/semestr 4/pacz/OszlifowanyWengiel/out/build/x64-Debug (domyślnie)/CMakeFiles/rebuild_cache.dir
+E:/OneDrive - Politechnika Łódzka/semestr 4/pacz/OszlifowanyWengiel/out/build/x64-Debug (domyślnie)/CMakeFiles/test.dir
+E:/OneDrive - Politechnika Łódzka/semestr 4/pacz/OszlifowanyWengiel/out/build/x64-Debug (domyślnie)/CMakeFiles/edit_cache.dir
+E:/OneDrive - Politechnika Łódzka/semestr 4/pacz/OszlifowanyWengiel/out/build/x64-Debug (domyślnie)/program/CMakeFiles/Program.dir
+E:/OneDrive - Politechnika Łódzka/semestr 4/pacz/OszlifowanyWengiel/out/build/x64-Debug (domyślnie)/program/CMakeFiles/rebuild_cache.dir
+E:/OneDrive - Politechnika Łódzka/semestr 4/pacz/OszlifowanyWengiel/out/build/x64-Debug (domyślnie)/program/CMakeFiles/test.dir
+E:/OneDrive - Politechnika Łódzka/semestr 4/pacz/OszlifowanyWengiel/out/build/x64-Debug (domyślnie)/program/CMakeFiles/edit_cache.dir
+E:/OneDrive - Politechnika Łódzka/semestr 4/pacz/OszlifowanyWengiel/out/build/x64-Debug (domyślnie)/library/CMakeFiles/edit_cache.dir
+E:/OneDrive - Politechnika Łódzka/semestr 4/pacz/OszlifowanyWengiel/out/build/x64-Debug (domyślnie)/library/CMakeFiles/Library.dir
+E:/OneDrive - Politechnika Łódzka/semestr 4/pacz/OszlifowanyWengiel/out/build/x64-Debug (domyślnie)/library/CMakeFiles/LibraryTest.dir
+E:/OneDrive - Politechnika Łódzka/semestr 4/pacz/OszlifowanyWengiel/out/build/x64-Debug (domyślnie)/library/CMakeFiles/rebuild_cache.dir
+E:/OneDrive - Politechnika Łódzka/semestr 4/pacz/OszlifowanyWengiel/out/build/x64-Debug (domyślnie)/library/CMakeFiles/test.dir

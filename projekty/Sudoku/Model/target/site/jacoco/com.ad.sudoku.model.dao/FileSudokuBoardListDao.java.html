@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pl"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>FileSudokuBoardListDao.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">ModelProject</a> &gt; <a href="index.source.html" class="el_package">com.ad.sudoku.model.dao</a> &gt; <span class="el_source">FileSudokuBoardListDao.java</span></div><h1>FileSudokuBoardListDao.java</h1><pre class="source lang-java linenums">package com.ad.sudoku.model.dao;
+
+import com.ad.sudoku.model.SudokuBoard;
+import com.ad.sudoku.model.exceptions.SudokuClassNotFoundException;
+import com.ad.sudoku.model.exceptions.SudokuIOexception;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+public class FileSudokuBoardListDao implements Dao&lt;List&lt;SudokuBoard&gt;&gt; {
+
+<span class="fc" id="L17">    private static final Logger logger = Logger.getLogger(FileSudokuBoardListDao.class.getName(),</span>
+            &quot;com.ad.sudoku.model.lang.sudokuLoggerLocale&quot;);
+
+    private String fileName;
+
+<span class="fc" id="L22">    public FileSudokuBoardListDao(String fileName) {</span>
+<span class="fc" id="L23">        this.fileName = fileName;</span>
+<span class="fc" id="L24">    }</span>
+
+    @Override
+    public List&lt;SudokuBoard&gt; read() {
+<span class="fc" id="L28">        try (FileInputStream fis = new FileInputStream(fileName);</span>
+<span class="fc" id="L29">             ObjectInputStream ois = new ObjectInputStream(fis)) {</span>
+
+<span class="fc" id="L31">            return (List&lt;SudokuBoard&gt;) ois.readObject();</span>
+
+<span class="fc" id="L33">        } catch (IOException e) {</span>
+<span class="fc" id="L34">            SudokuIOexception wrapper =</span>
+                    new SudokuIOexception(&quot;SudokuIOException.FileDao&quot;, e);
+<span class="fc" id="L36">            logger.log(Level.SEVERE, &quot;FileSudokuBoardListDao.read.IOException&quot;, e);</span>
+
+<span class="fc" id="L38">            throw wrapper;</span>
+<span class="nc" id="L39">        } catch (ClassNotFoundException e) {</span>
+<span class="nc" id="L40">            SudokuClassNotFoundException wrapper =</span>
+                    new SudokuClassNotFoundException(&quot;SudokuClassNotFoundException.FileDao&quot;, e);
+<span class="nc" id="L42">            logger.log(Level.SEVERE, &quot;FileSudokuBoardListDao.read.ClassNotFoundException&quot;);</span>
+<span class="nc" id="L43">            throw wrapper;</span>
+        }
+    }
+
+    @Override
+    public void write(List&lt;SudokuBoard&gt; obj) {
+<span class="fc" id="L49">        try (FileOutputStream fos = new FileOutputStream(fileName);</span>
+<span class="fc" id="L50">             ObjectOutputStream oos = new ObjectOutputStream(fos)) {</span>
+
+<span class="fc" id="L52">            oos.writeObject(obj);</span>
+
+<span class="fc" id="L54">        } catch (IOException e) {</span>
+<span class="fc" id="L55">            SudokuIOexception wrapper =</span>
+                    new SudokuIOexception(&quot;SudokuIOException.FileDao&quot;, e);
+<span class="fc" id="L57">            logger.log(Level.SEVERE, &quot;FileSudokuBoardListDao.write.IOException&quot;, e);</span>
+<span class="fc" id="L58">            throw wrapper;</span>
+<span class="fc" id="L59">        }</span>
+<span class="fc" id="L60">    }</span>
+
+    @Override
+    public void close() throws Exception {
+
+<span class="fc" id="L65">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

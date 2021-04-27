@@ -1,0 +1,6 @@
+SudokuFieldTest.class
+SudokuBoardDaoFactoryTest.class
+SudokuGroupTest.class
+DifficultyTest.class
+SudokuBoardTest.class
+BacktrackingSudokuSolverTest.class

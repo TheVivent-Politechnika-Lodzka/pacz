@@ -1,0 +1,107 @@
+[
+{
+  "directory": "E:/OneDrive - Politechnika Łódzka/semestr 4/pacz/OszlifowanyWengiel/out/build/x64-Debug (domyślnie)",
+  "command": "C:\\PROGRA~2\\MIB055~1\\2019\\COMMUN~1\\VC\\Tools\\MSVC\\1428~1.293\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -I..\\..\\..\\program\\include -I..\\..\\..\\library\\include -I..\\..\\..\\library\\include\\model -I..\\..\\..\\library\\include\\repositories -I..\\..\\..\\library\\include\\managers -g3 -gdwarf-4 /Foprogram\\CMakeFiles\\Program.dir\\src\\main.cpp.obj /FdTARGET_COMPILE_PDB /FS -c \"E:\\OneDrive - Politechnika Łódzka\\semestr 4\\pacz\\OszlifowanyWengiel\\program\\src\\main.cpp\"",
+  "file": "E:/OneDrive - Politechnika Łódzka/semestr 4/pacz/OszlifowanyWengiel/program/src/main.cpp"
+},
+{
+  "directory": "E:/OneDrive - Politechnika Łódzka/semestr 4/pacz/OszlifowanyWengiel/out/build/x64-Debug (domyślnie)",
+  "command": "C:\\PROGRA~2\\MIB055~1\\2019\\COMMUN~1\\VC\\Tools\\MSVC\\1428~1.293\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -I..\\..\\..\\library\\include -I..\\..\\..\\library\\include\\model -I..\\..\\..\\library\\include\\repositories -I..\\..\\..\\library\\include\\managers -IC:\\DevSoft\\boost_1_60_0 -g3 -gdwarf-4 /Folibrary\\CMakeFiles\\Library.dir\\src\\model\\Client.cpp.obj /FdTARGET_COMPILE_PDB /FS -c \"E:\\OneDrive - Politechnika Łódzka\\semestr 4\\pacz\\OszlifowanyWengiel\\library\\src\\model\\Client.cpp\"",
+  "file": "E:/OneDrive - Politechnika Łódzka/semestr 4/pacz/OszlifowanyWengiel/library/src/model/Client.cpp"
+},
+{
+  "directory": "E:/OneDrive - Politechnika Łódzka/semestr 4/pacz/OszlifowanyWengiel/out/build/x64-Debug (domyślnie)",
+  "command": "C:\\PROGRA~2\\MIB055~1\\2019\\COMMUN~1\\VC\\Tools\\MSVC\\1428~1.293\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -I..\\..\\..\\library\\include -I..\\..\\..\\library\\include\\model -I..\\..\\..\\library\\include\\repositories -I..\\..\\..\\library\\include\\managers -IC:\\DevSoft\\boost_1_60_0 -g3 -gdwarf-4 /Folibrary\\CMakeFiles\\Library.dir\\src\\model\\Ticket.cpp.obj /FdTARGET_COMPILE_PDB /FS -c \"E:\\OneDrive - Politechnika Łódzka\\semestr 4\\pacz\\OszlifowanyWengiel\\library\\src\\model\\Ticket.cpp\"",
+  "file": "E:/OneDrive - Politechnika Łódzka/semestr 4/pacz/OszlifowanyWengiel/library/src/model/Ticket.cpp"
+},
+{
+  "directory": "E:/OneDrive - Politechnika Łódzka/semestr 4/pacz/OszlifowanyWengiel/out/build/x64-Debug (domyślnie)",
+  "command": "C:\\PROGRA~2\\MIB055~1\\2019\\COMMUN~1\\VC\\Tools\\MSVC\\1428~1.293\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -I..\\..\\..\\library\\include -I..\\..\\..\\library\\include\\model -I..\\..\\..\\library\\include\\repositories -I..\\..\\..\\library\\include\\managers -IC:\\DevSoft\\boost_1_60_0 -g3 -gdwarf-4 /Folibrary\\CMakeFiles\\Library.dir\\src\\model\\SingleTicket.cpp.obj /FdTARGET_COMPILE_PDB /FS -c \"E:\\OneDrive - Politechnika Łódzka\\semestr 4\\pacz\\OszlifowanyWengiel\\library\\src\\model\\SingleTicket.cpp\"",
+  "file": "E:/OneDrive - Politechnika Łódzka/semestr 4/pacz/OszlifowanyWengiel/library/src/model/SingleTicket.cpp"
+},
+{
+  "directory": "E:/OneDrive - Politechnika Łódzka/semestr 4/pacz/OszlifowanyWengiel/out/build/x64-Debug (domyślnie)",
+  "command": "C:\\PROGRA~2\\MIB055~1\\2019\\COMMUN~1\\VC\\Tools\\MSVC\\1428~1.293\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -I..\\..\\..\\library\\include -I..\\..\\..\\library\\include\\model -I..\\..\\..\\library\\include\\repositories -I..\\..\\..\\library\\include\\managers -IC:\\DevSoft\\boost_1_60_0 -g3 -gdwarf-4 /Folibrary\\CMakeFiles\\Library.dir\\src\\model\\GroupTicket.cpp.obj /FdTARGET_COMPILE_PDB /FS -c \"E:\\OneDrive - Politechnika Łódzka\\semestr 4\\pacz\\OszlifowanyWengiel\\library\\src\\model\\GroupTicket.cpp\"",
+  "file": "E:/OneDrive - Politechnika Łódzka/semestr 4/pacz/OszlifowanyWengiel/library/src/model/GroupTicket.cpp"
+},
+{
+  "directory": "E:/OneDrive - Politechnika Łódzka/semestr 4/pacz/OszlifowanyWengiel/out/build/x64-Debug (domyślnie)",
+  "command": "C:\\PROGRA~2\\MIB055~1\\2019\\COMMUN~1\\VC\\Tools\\MSVC\\1428~1.293\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -I..\\..\\..\\library\\include -I..\\..\\..\\library\\include\\model -I..\\..\\..\\library\\include\\repositories -I..\\..\\..\\library\\include\\managers -IC:\\DevSoft\\boost_1_60_0 -g3 -gdwarf-4 /Folibrary\\CMakeFiles\\Library.dir\\src\\managers\\ClientManager.cpp.obj /FdTARGET_COMPILE_PDB /FS -c \"E:\\OneDrive - Politechnika Łódzka\\semestr 4\\pacz\\OszlifowanyWengiel\\library\\src\\managers\\ClientManager.cpp\"",
+  "file": "E:/OneDrive - Politechnika Łódzka/semestr 4/pacz/OszlifowanyWengiel/library/src/managers/ClientManager.cpp"
+},
+{
+  "directory": "E:/OneDrive - Politechnika Łódzka/semestr 4/pacz/OszlifowanyWengiel/out/build/x64-Debug (domyślnie)",
+  "command": "C:\\PROGRA~2\\MIB055~1\\2019\\COMMUN~1\\VC\\Tools\\MSVC\\1428~1.293\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -I..\\..\\..\\library\\include -I..\\..\\..\\library\\include\\model -I..\\..\\..\\library\\include\\repositories -I..\\..\\..\\library\\include\\managers -IC:\\DevSoft\\boost_1_60_0 -g3 -gdwarf-4 /Folibrary\\CMakeFiles\\Library.dir\\src\\managers\\TicketManager.cpp.obj /FdTARGET_COMPILE_PDB /FS -c \"E:\\OneDrive - Politechnika Łódzka\\semestr 4\\pacz\\OszlifowanyWengiel\\library\\src\\managers\\TicketManager.cpp\"",
+  "file": "E:/OneDrive - Politechnika Łódzka/semestr 4/pacz/OszlifowanyWengiel/library/src/managers/TicketManager.cpp"
+},
+{
+  "directory": "E:/OneDrive - Politechnika Łódzka/semestr 4/pacz/OszlifowanyWengiel/out/build/x64-Debug (domyślnie)",
+  "command": "C:\\PROGRA~2\\MIB055~1\\2019\\COMMUN~1\\VC\\Tools\\MSVC\\1428~1.293\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -I..\\..\\..\\library\\include -I..\\..\\..\\library\\include\\model -I..\\..\\..\\library\\include\\repositories -I..\\..\\..\\library\\include\\managers -IC:\\DevSoft\\boost_1_60_0 -g3 -gdwarf-4 /Folibrary\\CMakeFiles\\Library.dir\\src\\model\\Attraction.cpp.obj /FdTARGET_COMPILE_PDB /FS -c \"E:\\OneDrive - Politechnika Łódzka\\semestr 4\\pacz\\OszlifowanyWengiel\\library\\src\\model\\Attraction.cpp\"",
+  "file": "E:/OneDrive - Politechnika Łódzka/semestr 4/pacz/OszlifowanyWengiel/library/src/model/Attraction.cpp"
+},
+{
+  "directory": "E:/OneDrive - Politechnika Łódzka/semestr 4/pacz/OszlifowanyWengiel/out/build/x64-Debug (domyślnie)",
+  "command": "C:\\PROGRA~2\\MIB055~1\\2019\\COMMUN~1\\VC\\Tools\\MSVC\\1428~1.293\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -I..\\..\\..\\library\\include -I..\\..\\..\\library\\include\\model -I..\\..\\..\\library\\include\\repositories -I..\\..\\..\\library\\include\\managers -IC:\\DevSoft\\boost_1_60_0 -g3 -gdwarf-4 /Folibrary\\CMakeFiles\\Library.dir\\src\\repositories\\AttractionList.cpp.obj /FdTARGET_COMPILE_PDB /FS -c \"E:\\OneDrive - Politechnika Łódzka\\semestr 4\\pacz\\OszlifowanyWengiel\\library\\src\\repositories\\AttractionList.cpp\"",
+  "file": "E:/OneDrive - Politechnika Łódzka/semestr 4/pacz/OszlifowanyWengiel/library/src/repositories/AttractionList.cpp"
+},
+{
+  "directory": "E:/OneDrive - Politechnika Łódzka/semestr 4/pacz/OszlifowanyWengiel/out/build/x64-Debug (domyślnie)",
+  "command": "C:\\PROGRA~2\\MIB055~1\\2019\\COMMUN~1\\VC\\Tools\\MSVC\\1428~1.293\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -I..\\..\\..\\library\\include -I..\\..\\..\\library\\include\\model -I..\\..\\..\\library\\include\\repositories -I..\\..\\..\\library\\include\\managers -IC:\\DevSoft\\boost_1_60_0 -g3 -gdwarf-4 /Folibrary\\CMakeFiles\\Library.dir\\src\\managers\\Aquarium.cpp.obj /FdTARGET_COMPILE_PDB /FS -c \"E:\\OneDrive - Politechnika Łódzka\\semestr 4\\pacz\\OszlifowanyWengiel\\library\\src\\managers\\Aquarium.cpp\"",
+  "file": "E:/OneDrive - Politechnika Łódzka/semestr 4/pacz/OszlifowanyWengiel/library/src/managers/Aquarium.cpp"
+},
+{
+  "directory": "E:/OneDrive - Politechnika Łódzka/semestr 4/pacz/OszlifowanyWengiel/out/build/x64-Debug (domyślnie)",
+  "command": "C:\\PROGRA~2\\MIB055~1\\2019\\COMMUN~1\\VC\\Tools\\MSVC\\1428~1.293\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -I..\\..\\..\\library\\include -I..\\..\\..\\library\\include\\model -I..\\..\\..\\library\\include\\managers -I..\\..\\..\\library\\include\\repositories -IC:\\DevSoft\\boost_1_60_0 -g3 -gdwarf-4 /Folibrary\\CMakeFiles\\LibraryTest.dir\\test\\master.cpp.obj /FdTARGET_COMPILE_PDB /FS -c \"E:\\OneDrive - Politechnika Łódzka\\semestr 4\\pacz\\OszlifowanyWengiel\\library\\test\\master.cpp\"",
+  "file": "E:/OneDrive - Politechnika Łódzka/semestr 4/pacz/OszlifowanyWengiel/library/test/master.cpp"
+},
+{
+  "directory": "E:/OneDrive - Politechnika Łódzka/semestr 4/pacz/OszlifowanyWengiel/out/build/x64-Debug (domyślnie)",
+  "command": "C:\\PROGRA~2\\MIB055~1\\2019\\COMMUN~1\\VC\\Tools\\MSVC\\1428~1.293\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -I..\\..\\..\\library\\include -I..\\..\\..\\library\\include\\model -I..\\..\\..\\library\\include\\managers -I..\\..\\..\\library\\include\\repositories -IC:\\DevSoft\\boost_1_60_0 -g3 -gdwarf-4 /Folibrary\\CMakeFiles\\LibraryTest.dir\\test\\ClientTest.cpp.obj /FdTARGET_COMPILE_PDB /FS -c \"E:\\OneDrive - Politechnika Łódzka\\semestr 4\\pacz\\OszlifowanyWengiel\\library\\test\\ClientTest.cpp\"",
+  "file": "E:/OneDrive - Politechnika Łódzka/semestr 4/pacz/OszlifowanyWengiel/library/test/ClientTest.cpp"
+},
+{
+  "directory": "E:/OneDrive - Politechnika Łódzka/semestr 4/pacz/OszlifowanyWengiel/out/build/x64-Debug (domyślnie)",
+  "command": "C:\\PROGRA~2\\MIB055~1\\2019\\COMMUN~1\\VC\\Tools\\MSVC\\1428~1.293\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -I..\\..\\..\\library\\include -I..\\..\\..\\library\\include\\model -I..\\..\\..\\library\\include\\managers -I..\\..\\..\\library\\include\\repositories -IC:\\DevSoft\\boost_1_60_0 -g3 -gdwarf-4 /Folibrary\\CMakeFiles\\LibraryTest.dir\\test\\TicketTest.cpp.obj /FdTARGET_COMPILE_PDB /FS -c \"E:\\OneDrive - Politechnika Łódzka\\semestr 4\\pacz\\OszlifowanyWengiel\\library\\test\\TicketTest.cpp\"",
+  "file": "E:/OneDrive - Politechnika Łódzka/semestr 4/pacz/OszlifowanyWengiel/library/test/TicketTest.cpp"
+},
+{
+  "directory": "E:/OneDrive - Politechnika Łódzka/semestr 4/pacz/OszlifowanyWengiel/out/build/x64-Debug (domyślnie)",
+  "command": "C:\\PROGRA~2\\MIB055~1\\2019\\COMMUN~1\\VC\\Tools\\MSVC\\1428~1.293\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -I..\\..\\..\\library\\include -I..\\..\\..\\library\\include\\model -I..\\..\\..\\library\\include\\managers -I..\\..\\..\\library\\include\\repositories -IC:\\DevSoft\\boost_1_60_0 -g3 -gdwarf-4 /Folibrary\\CMakeFiles\\LibraryTest.dir\\test\\SingleTicketTest.cpp.obj /FdTARGET_COMPILE_PDB /FS -c \"E:\\OneDrive - Politechnika Łódzka\\semestr 4\\pacz\\OszlifowanyWengiel\\library\\test\\SingleTicketTest.cpp\"",
+  "file": "E:/OneDrive - Politechnika Łódzka/semestr 4/pacz/OszlifowanyWengiel/library/test/SingleTicketTest.cpp"
+},
+{
+  "directory": "E:/OneDrive - Politechnika Łódzka/semestr 4/pacz/OszlifowanyWengiel/out/build/x64-Debug (domyślnie)",
+  "command": "C:\\PROGRA~2\\MIB055~1\\2019\\COMMUN~1\\VC\\Tools\\MSVC\\1428~1.293\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -I..\\..\\..\\library\\include -I..\\..\\..\\library\\include\\model -I..\\..\\..\\library\\include\\managers -I..\\..\\..\\library\\include\\repositories -IC:\\DevSoft\\boost_1_60_0 -g3 -gdwarf-4 /Folibrary\\CMakeFiles\\LibraryTest.dir\\test\\GroupTicketTest.cpp.obj /FdTARGET_COMPILE_PDB /FS -c \"E:\\OneDrive - Politechnika Łódzka\\semestr 4\\pacz\\OszlifowanyWengiel\\library\\test\\GroupTicketTest.cpp\"",
+  "file": "E:/OneDrive - Politechnika Łódzka/semestr 4/pacz/OszlifowanyWengiel/library/test/GroupTicketTest.cpp"
+},
+{
+  "directory": "E:/OneDrive - Politechnika Łódzka/semestr 4/pacz/OszlifowanyWengiel/out/build/x64-Debug (domyślnie)",
+  "command": "C:\\PROGRA~2\\MIB055~1\\2019\\COMMUN~1\\VC\\Tools\\MSVC\\1428~1.293\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -I..\\..\\..\\library\\include -I..\\..\\..\\library\\include\\model -I..\\..\\..\\library\\include\\managers -I..\\..\\..\\library\\include\\repositories -IC:\\DevSoft\\boost_1_60_0 -g3 -gdwarf-4 /Folibrary\\CMakeFiles\\LibraryTest.dir\\test\\AttractionTest.cpp.obj /FdTARGET_COMPILE_PDB /FS -c \"E:\\OneDrive - Politechnika Łódzka\\semestr 4\\pacz\\OszlifowanyWengiel\\library\\test\\AttractionTest.cpp\"",
+  "file": "E:/OneDrive - Politechnika Łódzka/semestr 4/pacz/OszlifowanyWengiel/library/test/AttractionTest.cpp"
+},
+{
+  "directory": "E:/OneDrive - Politechnika Łódzka/semestr 4/pacz/OszlifowanyWengiel/out/build/x64-Debug (domyślnie)",
+  "command": "C:\\PROGRA~2\\MIB055~1\\2019\\COMMUN~1\\VC\\Tools\\MSVC\\1428~1.293\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -I..\\..\\..\\library\\include -I..\\..\\..\\library\\include\\model -I..\\..\\..\\library\\include\\managers -I..\\..\\..\\library\\include\\repositories -IC:\\DevSoft\\boost_1_60_0 -g3 -gdwarf-4 /Folibrary\\CMakeFiles\\LibraryTest.dir\\test\\AttractionListTest.cpp.obj /FdTARGET_COMPILE_PDB /FS -c \"E:\\OneDrive - Politechnika Łódzka\\semestr 4\\pacz\\OszlifowanyWengiel\\library\\test\\AttractionListTest.cpp\"",
+  "file": "E:/OneDrive - Politechnika Łódzka/semestr 4/pacz/OszlifowanyWengiel/library/test/AttractionListTest.cpp"
+},
+{
+  "directory": "E:/OneDrive - Politechnika Łódzka/semestr 4/pacz/OszlifowanyWengiel/out/build/x64-Debug (domyślnie)",
+  "command": "C:\\PROGRA~2\\MIB055~1\\2019\\COMMUN~1\\VC\\Tools\\MSVC\\1428~1.293\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -I..\\..\\..\\library\\include -I..\\..\\..\\library\\include\\model -I..\\..\\..\\library\\include\\managers -I..\\..\\..\\library\\include\\repositories -IC:\\DevSoft\\boost_1_60_0 -g3 -gdwarf-4 /Folibrary\\CMakeFiles\\LibraryTest.dir\\test\\RepositoryTest.cpp.obj /FdTARGET_COMPILE_PDB /FS -c \"E:\\OneDrive - Politechnika Łódzka\\semestr 4\\pacz\\OszlifowanyWengiel\\library\\test\\RepositoryTest.cpp\"",
+  "file": "E:/OneDrive - Politechnika Łódzka/semestr 4/pacz/OszlifowanyWengiel/library/test/RepositoryTest.cpp"
+},
+{
+  "directory": "E:/OneDrive - Politechnika Łódzka/semestr 4/pacz/OszlifowanyWengiel/out/build/x64-Debug (domyślnie)",
+  "command": "C:\\PROGRA~2\\MIB055~1\\2019\\COMMUN~1\\VC\\Tools\\MSVC\\1428~1.293\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -I..\\..\\..\\library\\include -I..\\..\\..\\library\\include\\model -I..\\..\\..\\library\\include\\managers -I..\\..\\..\\library\\include\\repositories -IC:\\DevSoft\\boost_1_60_0 -g3 -gdwarf-4 /Folibrary\\CMakeFiles\\LibraryTest.dir\\test\\ClientManagerTest.cpp.obj /FdTARGET_COMPILE_PDB /FS -c \"E:\\OneDrive - Politechnika Łódzka\\semestr 4\\pacz\\OszlifowanyWengiel\\library\\test\\ClientManagerTest.cpp\"",
+  "file": "E:/OneDrive - Politechnika Łódzka/semestr 4/pacz/OszlifowanyWengiel/library/test/ClientManagerTest.cpp"
+},
+{
+  "directory": "E:/OneDrive - Politechnika Łódzka/semestr 4/pacz/OszlifowanyWengiel/out/build/x64-Debug (domyślnie)",
+  "command": "C:\\PROGRA~2\\MIB055~1\\2019\\COMMUN~1\\VC\\Tools\\MSVC\\1428~1.293\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -I..\\..\\..\\library\\include -I..\\..\\..\\library\\include\\model -I..\\..\\..\\library\\include\\managers -I..\\..\\..\\library\\include\\repositories -IC:\\DevSoft\\boost_1_60_0 -g3 -gdwarf-4 /Folibrary\\CMakeFiles\\LibraryTest.dir\\test\\TicketManagerTest.cpp.obj /FdTARGET_COMPILE_PDB /FS -c \"E:\\OneDrive - Politechnika Łódzka\\semestr 4\\pacz\\OszlifowanyWengiel\\library\\test\\TicketManagerTest.cpp\"",
+  "file": "E:/OneDrive - Politechnika Łódzka/semestr 4/pacz/OszlifowanyWengiel/library/test/TicketManagerTest.cpp"
+},
+{
+  "directory": "E:/OneDrive - Politechnika Łódzka/semestr 4/pacz/OszlifowanyWengiel/out/build/x64-Debug (domyślnie)",
+  "command": "C:\\PROGRA~2\\MIB055~1\\2019\\COMMUN~1\\VC\\Tools\\MSVC\\1428~1.293\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -I..\\..\\..\\library\\include -I..\\..\\..\\library\\include\\model -I..\\..\\..\\library\\include\\managers -I..\\..\\..\\library\\include\\repositories -IC:\\DevSoft\\boost_1_60_0 -g3 -gdwarf-4 /Folibrary\\CMakeFiles\\LibraryTest.dir\\test\\Aquarium.cpp.obj /FdTARGET_COMPILE_PDB /FS -c \"E:\\OneDrive - Politechnika Łódzka\\semestr 4\\pacz\\OszlifowanyWengiel\\library\\test\\Aquarium.cpp\"",
+  "file": "E:/OneDrive - Politechnika Łódzka/semestr 4/pacz/OszlifowanyWengiel/library/test/Aquarium.cpp"
+}
+]
