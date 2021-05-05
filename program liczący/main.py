@@ -37,7 +37,10 @@ for f in FILES:
 
 CP = (COMMENTS / (COMMENTS + NCNB)) * 100
 
-# CC
+OMEGA_DICT = {}
+
+# CC and WMC
+# potężny kawałek kodu (nie myśleć. głowa może wybuchnąć)
 CCsum = 0
 CCi = 0
 
@@ -45,11 +48,22 @@ WMCsum = 0
 WMCi = 0
 for f in FILES_CC:
     WMCi += 1
+    WMC = 0
+    functions = []
     for fun in f.function_list:
         CCcurr = fun.__dict__['cyclomatic_complexity']
         CCi += 1
         CCsum += CCcurr
         WMCsum += CCcurr
+        WMC += CCcurr
+        functions.append({
+            'name': fun.__dict__['name'],
+            'CC': CCcurr
+        })
+    
+    tail = os.path.split(f.__dict__['filename'])[1]
+    tail = os.path.splitext(tail)[0]
+    OMEGA_DICT[tail] = {'WMC': WMC, 'functions' : functions}
 
 CCavg = CCsum / CCi
 WMCavg = WMCsum / WMCi
@@ -77,5 +91,11 @@ print("LOC    - {}".format(LOC))
 print("NCNB   - {}".format(NCNB))
 print("EXEC   - {}".format(EXEC))
 print("CP     - {}%".format(round(CP, 2)))
-print("CCavg  - {}".format(round(CCavg, 2)))
-print("WMCavg - {}".format(round(WMCavg, 2)))
+print("CC_avg  - {}".format(round(CCavg, 2)))
+print("WMC_avg - {}".format(round(WMCavg, 2)))
+
+print()
+
+import pprint
+pp = pprint.PrettyPrinter(indent=4)
+pp.pprint(OMEGA_DICT)
