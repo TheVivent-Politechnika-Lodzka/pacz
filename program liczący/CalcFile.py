@@ -16,6 +16,8 @@ class CalcFile:
         wasPrevComm = False
 
         for line in self.FILE:
+            line = line.strip()
+
             self.LOC +=1
             
             # jeżeli pusta linia, leć dalej
