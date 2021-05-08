@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.GridPane?>
+
+<?import com.ad.sudoku.model.Difficulty?>
+
+<SplitPane fx:id="root" dividerPositions="0.697324414715719" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ad.sudoku.view.Window">
+  <items>
+      <GridPane fx:id="sudokuPane" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" />
+      <SplitPane dividerPositions="0.36432160804020103" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="159.0" prefWidth="178.0">
+               <children>
+                  <Label layoutX="12.0" layoutY="14.0" prefHeight="17.0" prefWidth="154.0" text="%gui.startGame.label.setDfifficulty" />
+                   <ChoiceBox fx:id="difficulty" layoutX="17.0" layoutY="31.0" prefHeight="25.0" prefWidth="144.0">
+                       <items>
+                           <FXCollections fx:factory="observableArrayList">
+                               <Difficulty fx:value="EASY" />
+                               <Difficulty fx:value="MEDIUM" />
+                               <Difficulty fx:value="HARD" />
+                               <Difficulty fx:value="SUPERHARD" />
+                           </FXCollections>
+                       </items>
+                   </ChoiceBox>
+                  <Button fx:id="acceptBtn" layoutX="17.0" layoutY="59.0" mnemonicParsing="false" onAction="#acceptDifficutly" prefHeight="25.0" prefWidth="144.0" text="%gui.startGame.button.startGame" />
+                  <Button layoutX="17.0" layoutY="84.0" mnemonicParsing="false" onAction="#loadGameFromFile" prefHeight="25.0" prefWidth="144.0" text="%gui.startGame.button.loadGame.file" />
+                  <Button layoutX="17.0" layoutY="109.0" mnemonicParsing="false" onAction="#loadGameFromDatabase" prefHeight="25.0" prefWidth="144.0" text="%gui.startGame.button.loadGame.database" />
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <CheckBox fx:id="tips" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#tipsSwitched" prefHeight="17.0" prefWidth="154.0" text="%gui.options.checkBox.tips" />
+                  <Button layoutX="14.0" layoutY="39.0" mnemonicParsing="false" onAction="#giveUp" prefHeight="25.0" prefWidth="144.0" text="%gui.options.button.giveUp" />
+                  <Button layoutX="14.0" layoutY="73.0" mnemonicParsing="false" onAction="#solve" prefHeight="25.0" prefWidth="144.0" text="%gui.options.button.solve" />
+                   <Button layoutX="14.0" layoutY="107.0" mnemonicParsing="false" onAction="#checkGame" prefHeight="25.0" prefWidth="144.0" text="%gui.options.button.check" />
+                   <Button layoutX="14.0" layoutY="141.0" mnemonicParsing="false" onAction="#saveGameToFile" prefHeight="25.0" prefWidth="144.0" text="%gui.options.button.save.file" />
+                   <Button layoutX="14.0" layoutY="175.0" mnemonicParsing="false" onAction="#saveGameToDatabase" prefHeight="25.0" prefWidth="144.0" text="%gui.options.button.save.database" />
+                   <ChoiceBox fx:id="languageBox" layoutX="14.0" layoutY="209.0" onAction="#setLang" prefHeight="25.0" prefWidth="144.0">
+                       <items>
+                           <FXCollections fx:factory="observableArrayList">
+                               <String fx:value="english" />
+                               <String fx:value="polski" />
+                               <String fx:value="日本人" />
+                           </FXCollections>
+                       </items>
+                   </ChoiceBox>
+               </children></AnchorPane>
+        </items>
+      </SplitPane>
+  </items>
+</SplitPane>

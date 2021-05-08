@@ -1,6 +1,7 @@
 import os
 from CalcFile import CalcFile
 import lizard as lz
+import re
 
 
 PATH = input("Podaj ścieżkę do projektu: ")
@@ -56,8 +57,11 @@ for f in FILES_CC:
         CCsum += CCcurr
         WMCsum += CCcurr
         WMC += CCcurr
+        name = fun.__dict__['name']
+        name = re.sub(r'^.*?\:', ':', name)
+        name = name.replace("::", '')
         functions.append({
-            'name': fun.__dict__['name'],
+            'name': name,
             'CC': CCcurr
         })
     
@@ -87,15 +91,117 @@ print("NOC  [Number of children] - to chyba też ręcznie")
 print()
 
 
-print("LOC    - {}".format(LOC))
-print("NCNB   - {}".format(NCNB))
-print("EXEC   - {}".format(EXEC))
-print("CP     - {}%".format(round(CP, 2)))
-print("CC_avg  - {}".format(round(CCavg, 2)))
-print("WMC_avg - {}".format(round(WMCavg, 2)))
+
 
 print()
 
-import pprint
-pp = pprint.PrettyPrinter(indent=4)
-pp.pprint(OMEGA_DICT)
+OUTFILE = open("out.html", 'w')
+OUTFILE.write("""
+<style>
+    table {
+        margin: 10px;
+        width: 600px;
+        border-collapse: collapse;
+    }
+
+    td, th{
+        border: 1px solid black;
+        margin: 0;
+        padding: 5px;
+    }
+    .CC{
+        width:90px
+    }
+    .fun{
+        text-align: left;
+    }
+    tr:nth-child(2n+1){
+        background: rgb(232, 232, 232);
+    }
+    tr:nth-child(1){
+        background: rgba(0,0,0,0);
+    }
+    tr:nth-child(1), tr:nth-child(2){
+        background: rgb(201, 245, 243);
+    }
+
+</style>
+""")
+
+
+for key in OMEGA_DICT:
+
+    OUTFILE.write("<table>")
+    OUTFILE.write("  <tr>")
+    OUTFILE.write("    <th>{}</th>".format(key))
+    OUTFILE.write("    <th class='CC'>WMC: {}</th>".format(OMEGA_DICT[key]['WMC']))
+    OUTFILE.write("  </tr>")
+
+    OUTFILE.write("  <tr class='fun'>")
+    OUTFILE.write("    <th>nazwa funkcji</th><th>CC</th>")
+    OUTFILE.write("  </tr>")
+    functions = OMEGA_DICT[key]['functions']
+    for i in range(len(functions)):
+        OUTFILE.write("<tr>")
+
+        OUTFILE.write("<td>{}</td>".format(functions[i]['name']))
+        OUTFILE.write("<td class='CC'>{}</td>".format(functions[i]['CC']))
+        
+        OUTFILE.write("</tr>")
+
+    OUTFILE.write("</table>")
+
+
+OUTFILE.write("""
+
+<table>
+    <tr>
+        <th colspan='2'>PODSUMOWANIE</th>
+    </tr>
+    <tr></tr>
+    <tr>
+        <td>LOC [Lines of Code]</td>
+        <td>{}</td>
+    </tr>
+    <tr>
+        <td>NCNB [Lines of Code]</td>
+        <td>{}</td>
+    </tr>
+    <tr>
+        <td>EXEC [Executable statements]</td>
+        <td>{}</td>
+    </tr>
+    <tr>
+        <td>CP [Comment percentage]</td>
+        <td>{}%</td>
+    </tr>
+    <tr>
+        <td>CCavg [average Cyclomatic Complexity]</td>
+        <td>{}</td>
+    </tr>
+    <tr>
+        <td>WMCavg [average Weighted method per class]</td>
+        <td>{}</td>
+    </tr>
+<table>
+
+""".format(LOC, NCNB, EXEC, round(CP, 2), round(CCavg, 2), round(WMCavg, 2)))
+
+
+# print("LOC    - {}".format(LOC))
+# print("NCNB   - {}".format(NCNB))
+# print("EXEC   - {}".format(EXEC))
+# print("CP     - {}%".format(round(CP, 2)))
+# print("CC_avg  - {}".format(round(CCavg, 2)))
+# print("WMC_avg - {}".format(round(WMCavg, 2)))
+
+# print("LOC  [Lines of Code] - wszystkie linie")
+# print("NCNB [Non-comment non-blank] - kod (bez komentarzy i pustych)")
+# print("EXEC [Executable statements] - NCNB, bez ifów, forów itp (tylko linie które coś robią)")
+# print("CP   [Comment percentage] - Współczynnik ilości komentarzy względem aktywnego kodu")
+# print("CC   [Cyclomatic Complexity] - złożoność cykliczna")
+# print("WMC  [Weighted method per class] - nwm")
+
+# import pprint
+# pp = pprint.PrettyPrinter(indent=4)
+# pp.pprint(OMEGA_DICT)
