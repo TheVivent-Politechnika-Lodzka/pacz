@@ -3,7 +3,6 @@ from CalcFile import CalcFile
 import lizard as lz
 import re
 
-
 PATH = input("Podaj ścieżkę do projektu: ")
 EXT = []
 tmp = 'a'
@@ -81,7 +80,7 @@ print("NCNB [Non-comment non-blank] - kod (bez komentarzy i pustych)")
 print("EXEC [Executable statements] - NCNB, bez ifów, forów itp (tylko linie które coś robią)")
 print("CP   [Comment percentage] - Współczynnik ilości komentarzy względem aktywnego kodu")
 print("CC   [Cyclomatic Complexity] - złożoność cykliczna")
-print("WMC  [Weighted method per class] - nwm")
+print("WMC  [Weighted method per class] - złożoność cykliczna klasowa")
 ### to trzeba ręcznie VVVVV
 print("RFC  [Response for a class] - lepiej policzyć ręcznie")
 print("LCOM [Lack of cohesion of methods] - chujowe")
@@ -89,9 +88,6 @@ print("CBO  [Coupling between object classes] - nwm")
 print("DIT  [Depth of inheritance tree] - to chyba ręcznie się policzy")
 print("NOC  [Number of children] - to chyba też ręcznie")
 print()
-
-
-
 
 print()
 
@@ -161,47 +157,28 @@ OUTFILE.write("""
     <tr></tr>
     <tr>
         <td>LOC [Lines of Code]</td>
-        <td>{}</td>
+        <td class='CC'>{}</td>
     </tr>
     <tr>
         <td>NCNB [Lines of Code]</td>
-        <td>{}</td>
+        <td class='CC'>{}</td>
     </tr>
     <tr>
         <td>EXEC [Executable statements]</td>
-        <td>{}</td>
+        <td class='CC'>{}</td>
     </tr>
     <tr>
         <td>CP [Comment percentage]</td>
-        <td>{}%</td>
+        <td class='CC'>{} %</td>
     </tr>
     <tr>
         <td>CCavg [average Cyclomatic Complexity]</td>
-        <td>{}</td>
+        <td class='CC'>{}</td>
     </tr>
     <tr>
         <td>WMCavg [average Weighted method per class]</td>
-        <td>{}</td>
+        <td class='CC'>{}</td>
     </tr>
 <table>
 
 """.format(LOC, NCNB, EXEC, round(CP, 2), round(CCavg, 2), round(WMCavg, 2)))
-
-
-# print("LOC    - {}".format(LOC))
-# print("NCNB   - {}".format(NCNB))
-# print("EXEC   - {}".format(EXEC))
-# print("CP     - {}%".format(round(CP, 2)))
-# print("CC_avg  - {}".format(round(CCavg, 2)))
-# print("WMC_avg - {}".format(round(WMCavg, 2)))
-
-# print("LOC  [Lines of Code] - wszystkie linie")
-# print("NCNB [Non-comment non-blank] - kod (bez komentarzy i pustych)")
-# print("EXEC [Executable statements] - NCNB, bez ifów, forów itp (tylko linie które coś robią)")
-# print("CP   [Comment percentage] - Współczynnik ilości komentarzy względem aktywnego kodu")
-# print("CC   [Cyclomatic Complexity] - złożoność cykliczna")
-# print("WMC  [Weighted method per class] - nwm")
-
-# import pprint
-# pp = pprint.PrettyPrinter(indent=4)
-# pp.pprint(OMEGA_DICT)
