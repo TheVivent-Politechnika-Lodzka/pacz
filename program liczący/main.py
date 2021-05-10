@@ -3,6 +3,9 @@ from CalcFile import CalcFile
 import lizard as lz
 import re
 
+from Projects import Aquarium
+from Projects import Sudoku
+
 PATH = input("Podaj ścieżkę do projektu: ")
 EXT = []
 tmp = 'a'
@@ -12,6 +15,9 @@ while True:
     if tmp.lower() == "stop": break
     if tmp[0] != '.': tmp = "." + tmp
     EXT.append(tmp.lower())
+
+OMEGA_DICT_SIMP = Sudoku
+if ".cpp" in EXT: OMEGA_DICT_SIMP = Aquarium
 
 FILES = []
 FILES_CC = []
@@ -66,7 +72,12 @@ for f in FILES_CC:
     
     tail = os.path.split(f.__dict__['filename'])[1]
     tail = os.path.splitext(tail)[0]
-    OMEGA_DICT[tail] = {'WMC': WMC, 'functions' : functions}
+    # OMEGA_DICT[tail] = {'WMC': WMC, 'functions' : functions}
+
+
+    OMEGA_DICT[tail] = {'functions' : functions}
+    try: OMEGA_DICT_SIMP[tail]['WMC'] = WMC
+    except: pass
 
 CCavg = CCsum / CCi
 WMCavg = WMCsum / WMCi
@@ -114,7 +125,7 @@ OUTFILE.write("""
     tr:nth-child(2n+1){
         background: rgb(232, 232, 232);
     }
-    tr:nth-child(1){
+    tr:nth-child(1), table:nth-child(2n) tr:nth-child(2){
         background: rgba(0,0,0,0);
     }
     tr:nth-child(1), tr:nth-child(2){
@@ -129,8 +140,7 @@ for key in OMEGA_DICT:
 
     OUTFILE.write("<table>")
     OUTFILE.write("  <tr>")
-    OUTFILE.write("    <th>{}</th>".format(key))
-    OUTFILE.write("    <th class='CC'>WMC: {}</th>".format(OMEGA_DICT[key]['WMC']))
+    OUTFILE.write("    <th colspan='2'>{}</th>".format(key))
     OUTFILE.write("  </tr>")
 
     OUTFILE.write("  <tr class='fun'>")
@@ -147,6 +157,25 @@ for key in OMEGA_DICT:
 
     OUTFILE.write("</table>")
 
+    try:
+        OUTFILE.write("<table>")
+        OUTFILE.write("""
+            <tr>
+                <th colspan='2'>Podsumowanie {}</th>
+            </tr>
+        """.format(key))
+
+        for key2 in OMEGA_DICT_SIMP[key]:
+            OUTFILE.write("""
+                <tr>
+                    <td>{}</td>
+                    <td>{}</td>
+                </tr>
+            """.format(key2, OMEGA_DICT_SIMP[key][key2]))
+
+        OUTFILE.write("</table>")
+    except:
+        pass
 
 OUTFILE.write("""
 
@@ -182,3 +211,5 @@ OUTFILE.write("""
 <table>
 
 """.format(LOC, NCNB, EXEC, round(CP, 2), round(CCavg, 2), round(WMCavg, 2)))
+
+

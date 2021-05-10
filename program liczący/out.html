@@ -20,7 +20,7 @@
     tr:nth-child(2n+1){
         background: rgb(232, 232, 232);
     }
-    tr:nth-child(1){
+    tr:nth-child(1), table:nth-child(2n) tr:nth-child(2){
         background: rgba(0,0,0,0);
     }
     tr:nth-child(1), tr:nth-child(2){
@@ -28,7 +28,529 @@
     }
 
 </style>
-<table>  <tr>    <th>Aquarium</th>    <th class='CC'>WMC: 18</th>  </tr>  <tr class='fun'>    <th>nazwa funkcji</th><th>CC</th>  </tr><tr><td>AquariumException</td><td class='CC'>1</td></tr><tr><td>Aquarium</td><td class='CC'>1</td></tr><tr><td>~Aquarium</td><td class='CC'>1</td></tr><tr><td>getBaseTicketPrice</td><td class='CC'>1</td></tr><tr><td>setBaseTicketPrice</td><td class='CC'>2</td></tr><tr><td>getBaseCapacity</td><td class='CC'>1</td></tr><tr><td>setBaseCapacity</td><td class='CC'>1</td></tr><tr><td>clients</td><td class='CC'>1</td></tr><tr><td>tickets</td><td class='CC'>1</td></tr><tr><td>attractions</td><td class='CC'>1</td></tr><tr><td>getFullCapacity</td><td class='CC'>2</td></tr><tr><td>addToAttractionList</td><td class='CC'>3</td></tr><tr><td>removeFromAttractionList</td><td class='CC'>1</td></tr><tr><td>operator < <</td><td class='CC'>1</td></tr></table><table>  <tr>    <th>ClientManager</th>    <th class='CC'>WMC: 15</th>  </tr>  <tr class='fun'>    <th>nazwa funkcji</th><th>CC</th>  </tr><tr><td>ClientManager</td><td class='CC'>1</td></tr><tr><td>~ClientManager</td><td class='CC'>1</td></tr><tr><td>getLocalAquarium</td><td class='CC'>1</td></tr><tr><td>registerClient</td><td class='CC'>5</td></tr><tr><td>getArchivedClients</td><td class='CC'>1</td></tr><tr><td>getActiveClients</td><td class='CC'>1</td></tr><tr><td>getByPesel</td><td class='CC'>1</td></tr><tr><td>getByIndex</td><td class='CC'>1</td></tr><tr><td>archiveClient</td><td class='CC'>1</td></tr><tr><td>operator < <</td><td class='CC'>2</td></tr></table><table>  <tr>    <th>TicketManager</th>    <th class='CC'>WMC: 46</th>  </tr>  <tr class='fun'>    <th>nazwa funkcji</th><th>CC</th>  </tr><tr><td>TicketManager</td><td class='CC'>1</td></tr><tr><td>checkTicket</td><td class='CC'>15</td></tr><tr><td>registerTicket</td><td class='CC'>2</td></tr><tr><td>registerTicket</td><td class='CC'>7</td></tr><tr><td>addToAttractionList</td><td class='CC'>2</td></tr><tr><td>removeFromAttractionList</td><td class='CC'>1</td></tr><tr><td>clearAttractionList</td><td class='CC'>2</td></tr><tr><td>getTemporaryAttractionList</td><td class='CC'>1</td></tr><tr><td>getLocalAquarium</td><td class='CC'>1</td></tr><tr><td>~TicketManager</td><td class='CC'>1</td></tr><tr><td>getAmountOfTickets</td><td class='CC'>1</td></tr><tr><td>getSingleTickets</td><td class='CC'>2</td></tr><tr><td>getGroupTickets</td><td class='CC'>2</td></tr><tr><td>getActiveTickets</td><td class='CC'>2</td></tr><tr><td>getArchivedTickets</td><td class='CC'>2</td></tr><tr><td>getByTicketId</td><td class='CC'>1</td></tr><tr><td>getByIndex</td><td class='CC'>1</td></tr><tr><td>operator < <</td><td class='CC'>2</td></tr></table><table>  <tr>    <th>Attraction</th>    <th class='CC'>WMC: 11</th>  </tr>  <tr class='fun'>    <th>nazwa funkcji</th><th>CC</th>  </tr><tr><td>AttractionException</td><td class='CC'>1</td></tr><tr><td>getCost</td><td class='CC'>1</td></tr><tr><td>setCost</td><td class='CC'>2</td></tr><tr><td>getMaxVisitors</td><td class='CC'>1</td></tr><tr><td>setMaxVisitors</td><td class='CC'>1</td></tr><tr><td>getAttractionName</td><td class='CC'>1</td></tr><tr><td>setAttractionName</td><td class='CC'>2</td></tr><tr><td>Attraction</td><td class='CC'>1</td></tr><tr><td>operator < <</td><td class='CC'>1</td></tr></table><table>  <tr>    <th>Client</th>    <th class='CC'>WMC: 13</th>  </tr>  <tr class='fun'>    <th>nazwa funkcji</th><th>CC</th>  </tr><tr><td>ClientException</td><td class='CC'>1</td></tr><tr><td>Client</td><td class='CC'>1</td></tr><tr><td>getFirstName</td><td class='CC'>1</td></tr><tr><td>getLastName</td><td class='CC'>1</td></tr><tr><td>getPesel</td><td class='CC'>1</td></tr><tr><td>isArchived</td><td class='CC'>1</td></tr><tr><td>setArchived</td><td class='CC'>1</td></tr><tr><td>setFirstName</td><td class='CC'>2</td></tr><tr><td>setLastName</td><td class='CC'>2</td></tr><tr><td>operator < <</td><td class='CC'>2</td></tr></table><table>  <tr>    <th>GroupTicket</th>    <th class='CC'>WMC: 13</th>  </tr>  <tr class='fun'>    <th>nazwa funkcji</th><th>CC</th>  </tr><tr><td>GroupTicket</td><td class='CC'>1</td></tr><tr><td>getNumberOfPeople</td><td class='CC'>1</td></tr><tr><td>getFinalPrice</td><td class='CC'>4</td></tr><tr><td>getGroupType</td><td class='CC'>1</td></tr><tr><td>changeDate</td><td class='CC'>2</td></tr><tr><td>operator < <</td><td class='CC'>1</td></tr><tr><td>groupToString</td><td class='CC'>3</td></tr></table><table>  <tr>    <th>SingleTicket</th>    <th class='CC'>WMC: 17</th>  </tr>  <tr class='fun'>    <th>nazwa funkcji</th><th>CC</th>  </tr><tr><td>getFinalPrice</td><td class='CC'>6</td></tr><tr><td>changeDate</td><td class='CC'>2</td></tr><tr><td>SingleTicket</td><td class='CC'>1</td></tr><tr><td>getVisitorType</td><td class='CC'>1</td></tr><tr><td>operator < <</td><td class='CC'>1</td></tr><tr><td>visitorToString</td><td class='CC'>6</td></tr></table><table>  <tr>    <th>Ticket</th>    <th class='CC'>WMC: 19</th>  </tr>  <tr class='fun'>    <th>nazwa funkcji</th><th>CC</th>  </tr><tr><td>TicketException</td><td class='CC'>1</td></tr><tr><td>Ticket</td><td class='CC'>1</td></tr><tr><td>~Ticket</td><td class='CC'>1</td></tr><tr><td>getTicketId</td><td class='CC'>1</td></tr><tr><td>getActiveDate</td><td class='CC'>1</td></tr><tr><td>getBasePrice</td><td class='CC'>1</td></tr><tr><td>isUsed</td><td class='CC'>1</td></tr><tr><td>getAttractions</td><td class='CC'>1</td></tr><tr><td>getOwner</td><td class='CC'>1</td></tr><tr><td>getFinalPrice</td><td class='CC'>2</td></tr><tr><td>setUsed</td><td class='CC'>1</td></tr><tr><td>setActiveDate</td><td class='CC'>1</td></tr><tr><td>print</td><td class='CC'>4</td></tr><tr><td>operator < <</td><td class='CC'>2</td></tr></table><table>  <tr>    <th>AttractionList</th>    <th class='CC'>WMC: 19</th>  </tr>  <tr class='fun'>    <th>nazwa funkcji</th><th>CC</th>  </tr><tr><td>AttractionListException</td><td class='CC'>1</td></tr><tr><td>getAttractionByIndex</td><td class='CC'>1</td></tr><tr><td>getAttractionListSize</td><td class='CC'>2</td></tr><tr><td>getTotalCost</td><td class='CC'>2</td></tr><tr><td>addAttration</td><td class='CC'>3</td></tr><tr><td>removeAttraction</td><td class='CC'>1</td></tr><tr><td>getAttractionByName</td><td class='CC'>3</td></tr><tr><td>AttractionList</td><td class='CC'>1</td></tr><tr><td>AttractionList</td><td class='CC'>2</td></tr><tr><td>clone</td><td class='CC'>1</td></tr><tr><td>operator < <</td><td class='CC'>2</td></tr></table><table>  <tr>    <th>main</th>    <th class='CC'>WMC: 1</th>  </tr>  <tr class='fun'>    <th>nazwa funkcji</th><th>CC</th>  </tr><tr><td>main</td><td class='CC'>1</td></tr></table>
+<table>  <tr>    <th colspan='2'>Difficulty</th>  </tr>  <tr class='fun'>    <th>nazwa funkcji</th><th>CC</th>  </tr><tr><td>Difficulty</td><td class='CC'>1</td></tr><tr><td>getEmptyFields</td><td class='CC'>1</td></tr><tr><td>toString</td><td class='CC'>1</td></tr><tr><td>startGame</td><td class='CC'>2</td></tr><tr><td>countEmptySpaces</td><td class='CC'>4</td></tr></table><table>
+            <tr>
+                <th colspan='2'>Podsumowanie Difficulty</th>
+            </tr>
+        
+                <tr>
+                    <td>RFC</td>
+                    <td></td>
+                </tr>
+            
+                <tr>
+                    <td>LCOM</td>
+                    <td></td>
+                </tr>
+            
+                <tr>
+                    <td>CBO</td>
+                    <td></td>
+                </tr>
+            
+                <tr>
+                    <td>DIT</td>
+                    <td></td>
+                </tr>
+            
+                <tr>
+                    <td>NOC</td>
+                    <td></td>
+                </tr>
+            
+                <tr>
+                    <td>WMC</td>
+                    <td>9</td>
+                </tr>
+            </table><table>  <tr>    <th colspan='2'>Main</th>  </tr>  <tr class='fun'>    <th>nazwa funkcji</th><th>CC</th>  </tr><tr><td>start</td><td class='CC'>1</td></tr><tr><td>main</td><td class='CC'>2</td></tr></table><table>
+            <tr>
+                <th colspan='2'>Podsumowanie Main</th>
+            </tr>
+        <table>  <tr>    <th colspan='2'>SudokuBoard</th>  </tr>  <tr class='fun'>    <th>nazwa funkcji</th><th>CC</th>  </tr><tr><td>SudokuBoard</td><td class='CC'>2</td></tr><tr><td>SudokuBoard</td><td class='CC'>2</td></tr><tr><td>toString</td><td class='CC'>1</td></tr><tr><td>equals</td><td class='CC'>6</td></tr><tr><td>hashCode</td><td class='CC'>1</td></tr><tr><td>propertyChange</td><td class='CC'>6</td></tr><tr><td>addActionListener</td><td class='CC'>1</td></tr><tr><td>clearBoard</td><td class='CC'>3</td></tr><tr><td>getName</td><td class='CC'>1</td></tr><tr><td>setName</td><td class='CC'>1</td></tr><tr><td>getId</td><td class='CC'>1</td></tr><tr><td>setId</td><td class='CC'>1</td></tr><tr><td>setAutoCheck</td><td class='CC'>1</td></tr><tr><td>isAutoCheck</td><td class='CC'>1</td></tr><tr><td>getField</td><td class='CC'>5</td></tr><tr><td>get</td><td class='CC'>5</td></tr><tr><td>set</td><td class='CC'>5</td></tr><tr><td>getRow</td><td class='CC'>4</td></tr><tr><td>getColumn</td><td class='CC'>4</td></tr><tr><td>getBox</td><td class='CC'>7</td></tr><tr><td>checkBoard</td><td class='CC'>1</td></tr><tr><td>solveGame</td><td class='CC'>1</td></tr><tr><td>getBoard</td><td class='CC'>3</td></tr><tr><td>clone</td><td class='CC'>3</td></tr></table><table>
+            <tr>
+                <th colspan='2'>Podsumowanie SudokuBoard</th>
+            </tr>
+        
+                <tr>
+                    <td>RFC</td>
+                    <td></td>
+                </tr>
+            
+                <tr>
+                    <td>LCOM</td>
+                    <td></td>
+                </tr>
+            
+                <tr>
+                    <td>CBO</td>
+                    <td></td>
+                </tr>
+            
+                <tr>
+                    <td>DIT</td>
+                    <td></td>
+                </tr>
+            
+                <tr>
+                    <td>NOC</td>
+                    <td></td>
+                </tr>
+            
+                <tr>
+                    <td>WMC</td>
+                    <td>66</td>
+                </tr>
+            </table><table>  <tr>    <th colspan='2'>SudokuBox</th>  </tr>  <tr class='fun'>    <th>nazwa funkcji</th><th>CC</th>  </tr><tr><td>SudokuBox</td><td class='CC'>1</td></tr><tr><td>clone</td><td class='CC'>1</td></tr></table><table>
+            <tr>
+                <th colspan='2'>Podsumowanie SudokuBox</th>
+            </tr>
+        
+                <tr>
+                    <td>RFC</td>
+                    <td></td>
+                </tr>
+            
+                <tr>
+                    <td>LCOM</td>
+                    <td></td>
+                </tr>
+            
+                <tr>
+                    <td>CBO</td>
+                    <td></td>
+                </tr>
+            
+                <tr>
+                    <td>DIT</td>
+                    <td></td>
+                </tr>
+            
+                <tr>
+                    <td>NOC</td>
+                    <td></td>
+                </tr>
+            
+                <tr>
+                    <td>WMC</td>
+                    <td>2</td>
+                </tr>
+            </table><table>  <tr>    <th colspan='2'>SudokuColumn</th>  </tr>  <tr class='fun'>    <th>nazwa funkcji</th><th>CC</th>  </tr><tr><td>SudokuColumn</td><td class='CC'>1</td></tr><tr><td>clone</td><td class='CC'>1</td></tr></table><table>
+            <tr>
+                <th colspan='2'>Podsumowanie SudokuColumn</th>
+            </tr>
+        
+                <tr>
+                    <td>RFC</td>
+                    <td></td>
+                </tr>
+            
+                <tr>
+                    <td>LCOM</td>
+                    <td></td>
+                </tr>
+            
+                <tr>
+                    <td>CBO</td>
+                    <td></td>
+                </tr>
+            
+                <tr>
+                    <td>DIT</td>
+                    <td></td>
+                </tr>
+            
+                <tr>
+                    <td>NOC</td>
+                    <td></td>
+                </tr>
+            
+                <tr>
+                    <td>WMC</td>
+                    <td>2</td>
+                </tr>
+            </table><table>  <tr>    <th colspan='2'>SudokuField</th>  </tr>  <tr class='fun'>    <th>nazwa funkcji</th><th>CC</th>  </tr><tr><td>SudokuField</td><td class='CC'>1</td></tr><tr><td>getId</td><td class='CC'>1</td></tr><tr><td>setId</td><td class='CC'>1</td></tr><tr><td>setBoard</td><td class='CC'>1</td></tr><tr><td>addPropertyChangeListener</td><td class='CC'>1</td></tr><tr><td>removePropertyChangeListener</td><td class='CC'>1</td></tr><tr><td>getValue</td><td class='CC'>1</td></tr><tr><td>setValue</td><td class='CC'>3</td></tr><tr><td>toString</td><td class='CC'>1</td></tr><tr><td>equals</td><td class='CC'>4</td></tr><tr><td>hashCode</td><td class='CC'>1</td></tr><tr><td>compareTo</td><td class='CC'>2</td></tr><tr><td>clone</td><td class='CC'>1</td></tr></table><table>
+            <tr>
+                <th colspan='2'>Podsumowanie SudokuField</th>
+            </tr>
+        <table>  <tr>    <th colspan='2'>SudokuGroup</th>  </tr>  <tr class='fun'>    <th>nazwa funkcji</th><th>CC</th>  </tr><tr><td>equals</td><td class='CC'>4</td></tr><tr><td>hashCode</td><td class='CC'>1</td></tr><tr><td>toString</td><td class='CC'>1</td></tr><tr><td>SudokuGroup</td><td class='CC'>3</td></tr><tr><td>verify</td><td class='CC'>4</td></tr><tr><td>clone</td><td class='CC'>1</td></tr></table><table>
+            <tr>
+                <th colspan='2'>Podsumowanie SudokuGroup</th>
+            </tr>
+        
+                <tr>
+                    <td>RFC</td>
+                    <td></td>
+                </tr>
+            
+                <tr>
+                    <td>LCOM</td>
+                    <td></td>
+                </tr>
+            
+                <tr>
+                    <td>CBO</td>
+                    <td></td>
+                </tr>
+            
+                <tr>
+                    <td>DIT</td>
+                    <td></td>
+                </tr>
+            
+                <tr>
+                    <td>NOC</td>
+                    <td></td>
+                </tr>
+            
+                <tr>
+                    <td>WMC</td>
+                    <td>14</td>
+                </tr>
+            </table><table>  <tr>    <th colspan='2'>SudokuRow</th>  </tr>  <tr class='fun'>    <th>nazwa funkcji</th><th>CC</th>  </tr><tr><td>SudokuRow</td><td class='CC'>1</td></tr><tr><td>clone</td><td class='CC'>1</td></tr></table><table>
+            <tr>
+                <th colspan='2'>Podsumowanie SudokuRow</th>
+            </tr>
+        
+                <tr>
+                    <td>RFC</td>
+                    <td></td>
+                </tr>
+            
+                <tr>
+                    <td>LCOM</td>
+                    <td></td>
+                </tr>
+            
+                <tr>
+                    <td>CBO</td>
+                    <td></td>
+                </tr>
+            
+                <tr>
+                    <td>DIT</td>
+                    <td></td>
+                </tr>
+            
+                <tr>
+                    <td>NOC</td>
+                    <td></td>
+                </tr>
+            
+                <tr>
+                    <td>WMC</td>
+                    <td>2</td>
+                </tr>
+            </table><table>  <tr>    <th colspan='2'>SudokuActionEvent</th>  </tr>  <tr class='fun'>    <th>nazwa funkcji</th><th>CC</th>  </tr><tr><td>SudokuActionEvent</td><td class='CC'>1</td></tr><tr><td>getRow</td><td class='CC'>1</td></tr><tr><td>getCol</td><td class='CC'>1</td></tr><tr><td>isInsertedValueCorrect</td><td class='CC'>1</td></tr></table><table>
+            <tr>
+                <th colspan='2'>Podsumowanie SudokuActionEvent</th>
+            </tr>
+        
+                <tr>
+                    <td>RFC</td>
+                    <td></td>
+                </tr>
+            
+                <tr>
+                    <td>LCOM</td>
+                    <td></td>
+                </tr>
+            
+                <tr>
+                    <td>CBO</td>
+                    <td></td>
+                </tr>
+            
+                <tr>
+                    <td>DIT</td>
+                    <td></td>
+                </tr>
+            
+                <tr>
+                    <td>NOC</td>
+                    <td></td>
+                </tr>
+            
+                <tr>
+                    <td>WMC</td>
+                    <td>4</td>
+                </tr>
+            </table><table>  <tr>    <th colspan='2'>Dao</th>  </tr>  <tr class='fun'>    <th>nazwa funkcji</th><th>CC</th>  </tr><tr><td>close</td><td class='CC'>1</td></tr></table><table>
+            <tr>
+                <th colspan='2'>Podsumowanie Dao</th>
+            </tr>
+        
+                <tr>
+                    <td>RFC</td>
+                    <td></td>
+                </tr>
+            
+                <tr>
+                    <td>LCOM</td>
+                    <td></td>
+                </tr>
+            
+                <tr>
+                    <td>CBO</td>
+                    <td></td>
+                </tr>
+            
+                <tr>
+                    <td>DIT</td>
+                    <td></td>
+                </tr>
+            
+                <tr>
+                    <td>NOC</td>
+                    <td></td>
+                </tr>
+            
+                <tr>
+                    <td>WMC</td>
+                    <td>1</td>
+                </tr>
+            </table><table>  <tr>    <th colspan='2'>FileSudokuBoardDao</th>  </tr>  <tr class='fun'>    <th>nazwa funkcji</th><th>CC</th>  </tr><tr><td>FileSudokuBoardDao</td><td class='CC'>1</td></tr><tr><td>read</td><td class='CC'>3</td></tr><tr><td>write</td><td class='CC'>2</td></tr></table><table>
+            <tr>
+                <th colspan='2'>Podsumowanie FileSudokuBoardDao</th>
+            </tr>
+        
+                <tr>
+                    <td>RFC</td>
+                    <td></td>
+                </tr>
+            
+                <tr>
+                    <td>LCOM</td>
+                    <td></td>
+                </tr>
+            
+                <tr>
+                    <td>CBO</td>
+                    <td></td>
+                </tr>
+            
+                <tr>
+                    <td>DIT</td>
+                    <td></td>
+                </tr>
+            
+                <tr>
+                    <td>NOC</td>
+                    <td></td>
+                </tr>
+            
+                <tr>
+                    <td>WMC</td>
+                    <td>6</td>
+                </tr>
+            </table><table>  <tr>    <th colspan='2'>FileSudokuBoardListDao</th>  </tr>  <tr class='fun'>    <th>nazwa funkcji</th><th>CC</th>  </tr><tr><td>FileSudokuBoardListDao</td><td class='CC'>1</td></tr><tr><td>read</td><td class='CC'>3</td></tr><tr><td>write</td><td class='CC'>2</td></tr><tr><td>close</td><td class='CC'>1</td></tr></table><table>
+            <tr>
+                <th colspan='2'>Podsumowanie FileSudokuBoardListDao</th>
+            </tr>
+        
+                <tr>
+                    <td>RFC</td>
+                    <td></td>
+                </tr>
+            
+                <tr>
+                    <td>LCOM</td>
+                    <td></td>
+                </tr>
+            
+                <tr>
+                    <td>CBO</td>
+                    <td></td>
+                </tr>
+            
+                <tr>
+                    <td>DIT</td>
+                    <td></td>
+                </tr>
+            
+                <tr>
+                    <td>NOC</td>
+                    <td></td>
+                </tr>
+            
+                <tr>
+                    <td>WMC</td>
+                    <td>7</td>
+                </tr>
+            </table><table>  <tr>    <th colspan='2'>JpaSudokuBoardDao</th>  </tr>  <tr class='fun'>    <th>nazwa funkcji</th><th>CC</th>  </tr><tr><td>JpaSudokuBoardDao</td><td class='CC'>1</td></tr><tr><td>readAll</td><td class='CC'>3</td></tr><tr><td>read</td><td class='CC'>3</td></tr><tr><td>write</td><td class='CC'>3</td></tr><tr><td>close</td><td class='CC'>2</td></tr></table><table>
+            <tr>
+                <th colspan='2'>Podsumowanie JpaSudokuBoardDao</th>
+            </tr>
+        
+                <tr>
+                    <td>RFC</td>
+                    <td></td>
+                </tr>
+            
+                <tr>
+                    <td>LCOM</td>
+                    <td></td>
+                </tr>
+            
+                <tr>
+                    <td>CBO</td>
+                    <td></td>
+                </tr>
+            
+                <tr>
+                    <td>DIT</td>
+                    <td></td>
+                </tr>
+            
+                <tr>
+                    <td>NOC</td>
+                    <td></td>
+                </tr>
+            
+                <tr>
+                    <td>WMC</td>
+                    <td>12</td>
+                </tr>
+            </table><table>  <tr>    <th colspan='2'>SudokuBoardDaoFactory</th>  </tr>  <tr class='fun'>    <th>nazwa funkcji</th><th>CC</th>  </tr><tr><td>SudokuBoardDaoFactory</td><td class='CC'>1</td></tr><tr><td>getInstance</td><td class='CC'>2</td></tr><tr><td>getSudokuBoardFileDao</td><td class='CC'>1</td></tr><tr><td>getSudokuBoardJdbcDao</td><td class='CC'>1</td></tr><tr><td>getSudokuBoardListFileDao</td><td class='CC'>1</td></tr></table><table>
+            <tr>
+                <th colspan='2'>Podsumowanie SudokuBoardDaoFactory</th>
+            </tr>
+        
+                <tr>
+                    <td>RFC</td>
+                    <td></td>
+                </tr>
+            
+                <tr>
+                    <td>LCOM</td>
+                    <td></td>
+                </tr>
+            
+                <tr>
+                    <td>CBO</td>
+                    <td></td>
+                </tr>
+            
+                <tr>
+                    <td>DIT</td>
+                    <td></td>
+                </tr>
+            
+                <tr>
+                    <td>NOC</td>
+                    <td></td>
+                </tr>
+            
+                <tr>
+                    <td>WMC</td>
+                    <td>6</td>
+                </tr>
+            </table><table>  <tr>    <th colspan='2'>BacktrackingSudokuSolver</th>  </tr>  <tr class='fun'>    <th>nazwa funkcji</th><th>CC</th>  </tr><tr><td>equals</td><td class='CC'>4</td></tr><tr><td>hashCode</td><td class='CC'>1</td></tr><tr><td>toString</td><td class='CC'>1</td></tr><tr><td>randomTmpArray</td><td class='CC'>2</td></tr><tr><td>fillGaps</td><td class='CC'>15</td></tr><tr><td>solve</td><td class='CC'>7</td></tr></table><table>
+            <tr>
+                <th colspan='2'>Podsumowanie BacktrackingSudokuSolver</th>
+            </tr>
+        
+                <tr>
+                    <td>RFC</td>
+                    <td></td>
+                </tr>
+            
+                <tr>
+                    <td>LCOM</td>
+                    <td></td>
+                </tr>
+            
+                <tr>
+                    <td>CBO</td>
+                    <td></td>
+                </tr>
+            
+                <tr>
+                    <td>DIT</td>
+                    <td></td>
+                </tr>
+            
+                <tr>
+                    <td>NOC</td>
+                    <td></td>
+                </tr>
+            
+                <tr>
+                    <td>WMC</td>
+                    <td>30</td>
+                </tr>
+            </table><table>  <tr>    <th colspan='2'>SudokuSolver</th>  </tr>  <tr class='fun'>    <th>nazwa funkcji</th><th>CC</th>  </tr></table><table>
+            <tr>
+                <th colspan='2'>Podsumowanie SudokuSolver</th>
+            </tr>
+        
+                <tr>
+                    <td>RFC</td>
+                    <td></td>
+                </tr>
+            
+                <tr>
+                    <td>LCOM</td>
+                    <td></td>
+                </tr>
+            
+                <tr>
+                    <td>CBO</td>
+                    <td></td>
+                </tr>
+            
+                <tr>
+                    <td>DIT</td>
+                    <td></td>
+                </tr>
+            
+                <tr>
+                    <td>NOC</td>
+                    <td></td>
+                </tr>
+            
+                <tr>
+                    <td>WMC</td>
+                    <td>0</td>
+                </tr>
+            </table><table>  <tr>    <th colspan='2'>TextFieldBackgroundColor</th>  </tr>  <tr class='fun'>    <th>nazwa funkcji</th><th>CC</th>  </tr><tr><td>TextFieldBackgroundColor</td><td class='CC'>1</td></tr><tr><td>toString</td><td class='CC'>1</td></tr></table><table>
+            <tr>
+                <th colspan='2'>Podsumowanie TextFieldBackgroundColor</th>
+            </tr>
+        <table>  <tr>    <th colspan='2'>Window</th>  </tr>  <tr class='fun'>    <th>nazwa funkcji</th><th>CC</th>  </tr><tr><td>Window</td><td class='CC'>4</td></tr><tr><td>initialize</td><td class='CC'>4</td></tr><tr><td>getTextField</td><td class='CC'>1</td></tr><tr><td>toggleDifficultyVisibility</td><td class='CC'>1</td></tr><tr><td>setBoxesColors</td><td class='CC'>11</td></tr><tr><td>disableNonZeroTextFields</td><td class='CC'>4</td></tr><tr><td>acceptDifficutly</td><td class='CC'>4</td></tr><tr><td>solve</td><td class='CC'>1</td></tr><tr><td>tipsSwitched</td><td class='CC'>1</td></tr><tr><td>giveUp</td><td class='CC'>1</td></tr><tr><td>actionPerformed</td><td class='CC'>3</td></tr><tr><td>checkGame</td><td class='CC'>6</td></tr><tr><td>setLang</td><td class='CC'>5</td></tr><tr><td>saveGameToFile</td><td class='CC'>2</td></tr><tr><td>loadGameFromFile</td><td class='CC'>6</td></tr><tr><td>saveGameToDatabase</td><td class='CC'>3</td></tr><tr><td>loadGameFromDatabase</td><td class='CC'>7</td></tr></table><table>
+            <tr>
+                <th colspan='2'>Podsumowanie Window</th>
+            </tr>
+        
+                <tr>
+                    <td>RFC</td>
+                    <td></td>
+                </tr>
+            
+                <tr>
+                    <td>LCOM</td>
+                    <td></td>
+                </tr>
+            
+                <tr>
+                    <td>CBO</td>
+                    <td></td>
+                </tr>
+            
+                <tr>
+                    <td>DIT</td>
+                    <td></td>
+                </tr>
+            
+                <tr>
+                    <td>NOC</td>
+                    <td></td>
+                </tr>
+            
+                <tr>
+                    <td>WMC</td>
+                    <td>64</td>
+                </tr>
+            </table>
 
 <table>
     <tr>
@@ -37,27 +559,27 @@
     <tr></tr>
     <tr>
         <td>LOC [Lines of Code]</td>
-        <td class='CC'>1384</td>
+        <td class='CC'>1581</td>
     </tr>
     <tr>
         <td>NCNB [Lines of Code]</td>
-        <td class='CC'>941</td>
+        <td class='CC'>1227</td>
     </tr>
     <tr>
         <td>EXEC [Executable statements]</td>
-        <td class='CC'>739</td>
+        <td class='CC'>891</td>
     </tr>
     <tr>
         <td>CP [Comment percentage]</td>
-        <td class='CC'>7.56%</td>
+        <td class='CC'>5.1 %</td>
     </tr>
     <tr>
         <td>CCavg [average Cyclomatic Complexity]</td>
-        <td class='CC'>1.72</td>
+        <td class='CC'>2.41</td>
     </tr>
     <tr>
         <td>WMCavg [average Weighted method per class]</td>
-        <td class='CC'>17.2</td>
+        <td class='CC'>13.21</td>
     </tr>
 <table>
 
