@@ -169,7 +169,7 @@ for key in OMEGA_DICT:
             OUTFILE.write("""
                 <tr>
                     <td>{}</td>
-                    <td>{}</td>
+                    <td class="CC">{}</td>
                 </tr>
             """.format(key2, OMEGA_DICT_SIMP[key][key2]))
 

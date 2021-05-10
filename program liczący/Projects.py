@@ -84,136 +84,136 @@ Aquarium = {
 Sudoku = {
     "Difficulty": 
         {
-            "RFC": "",
-            "LCOM": "",
-            "CBO": "",
-            "DIT": "",
-            "NOC": ""
+            "RFC": "9",
+            "LCOM": "8",
+            "CBO": "0",
+            "DIT": "1",
+            "NOC": "0"
         },
 
     "SudokuBoard": 
         {
-            "RFC": "",
-            "LCOM": "",
-            "CBO": "",
-            "DIT": "",
-            "NOC": ""
+            "RFC": "107",
+            "LCOM": "164",
+            "CBO": "4",
+            "DIT": "1",
+            "NOC": "0"
         },
 
     "SudokuBox": 
         {
-            "RFC": "",
-            "LCOM": "",
-            "CBO": "",
-            "DIT": "",
-            "NOC": ""
+            "RFC": "1",
+            "LCOM": "1",
+            "CBO": "0",
+            "DIT": "2",
+            "NOC": "0"
         },
 
     "SudokuColumn": 
         {
-            "RFC": "",
-            "LCOM": "",
-            "CBO": "",
-            "DIT": "",
-            "NOC": ""
+            "RFC": "1",
+            "LCOM": "1",
+            "CBO": "0",
+            "DIT": "2",
+            "NOC": "0"
         },
 
     "SudokuRow": 
         {
-            "RFC": "",
-            "LCOM": "",
-            "CBO": "",
-            "DIT": "",
-            "NOC": ""
+            "RFC": "1",
+            "LCOM": "1",
+            "CBO": "0",
+            "DIT": "2",
+            "NOC": "0"
         },
 
     "SudokuGroup": 
         {
-            "RFC": "",
-            "LCOM": "",
-            "CBO": "",
-            "DIT": "",
-            "NOC": ""
+            "RFC": "14",
+            "LCOM": "4",
+            "CBO": "0",
+            "DIT": "1",
+            "NOC": "3"
         },
 
     "SudokuActionEvent": 
         {
-            "RFC": "",
-            "LCOM": "",
-            "CBO": "",
-            "DIT": "",
-            "NOC": ""
+            "RFC": "0",
+            "LCOM": "0",
+            "CBO": "0",
+            "DIT": "4",
+            "NOC": "0"
         },
 
     "Dao": 
         {
-            "RFC": "",
-            "LCOM": "",
-            "CBO": "",
-            "DIT": "",
-            "NOC": ""
+            "RFC": "0",
+            "LCOM": "1",
+            "CBO": "0",
+            "DIT": "2",
+            "NOC": "0"
         },
 
     "FileSudokuBoardDao": 
         {
-            "RFC": "",
-            "LCOM": "",
-            "CBO": "",
-            "DIT": "",
+            "RFC": "14",
+            "LCOM": "3",
+            "CBO": "3",
+            "DIT": "2",
             "NOC": ""
         },
 
     "FileSudokuBoardListDao": 
         {
-            "RFC": "",
-            "LCOM": "",
-            "CBO": "",
-            "DIT": "",
+            "RFC": "14",
+            "LCOM": "2",
+            "CBO": "3",
+            "DIT": "2",
             "NOC": ""
         },
 
     "JpaSudokuBoardDao": 
         {
-            "RFC": "",
-            "LCOM": "",
-            "CBO": "",
-            "DIT": "",
-            "NOC": ""
+            "RFC": "31",
+            "LCOM": "10",
+            "CBO": "2",
+            "DIT": "2",
+            "NOC": "0"
         },
 
     "SudokuBoardDaoFactory": 
         {
-            "RFC": "",
-            "LCOM": "",
-            "CBO": "",
-            "DIT": "",
-            "NOC": ""
+            "RFC": "4",
+            "LCOM": "9",
+            "CBO": "1",
+            "DIT": "1",
+            "NOC": "0"
         },
 
     "BacktrackingSudokuSolver": 
         {
-            "RFC": "",
-            "LCOM": "",
-            "CBO": "",
-            "DIT": "",
-            "NOC": ""
+            "RFC": "31",
+            "LCOM": "18",
+            "CBO": "1",
+            "DIT": "2",
+            "NOC": "0"
         },
 
     "SudokuSolver": 
         {
-            "RFC": "",
-            "LCOM": "",
-            "CBO": "",
-            "DIT": "",
-            "NOC": ""
+            "RFC": "0",
+            "LCOM": "1",
+            "CBO": "1",
+            "DIT": "1",
+            "NOC": "0"
         },
 
     "Window": 
         {
-            "RFC": "",
-            "LCOM": "",
-            "CBO": "",
-            "DIT": "",
-            "NOC": ""
+            "RFC": "184",
+            "LCOM": "102",
+            "CBO": "7",
+            "DIT": "1",
+            "NOC": "0"
         },   
 }
