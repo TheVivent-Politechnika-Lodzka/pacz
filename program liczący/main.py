@@ -2,6 +2,7 @@ import os
 from CalcFile import CalcFile
 import lizard as lz
 import re
+from numpy import exp
 
 from Projects import Aquarium
 from Projects import Sudoku
@@ -85,22 +86,22 @@ WMCavg = WMCsum / WMCi
 
 #########################
 os.system("cls")
-print("Z prezentacji:")
-print("LOC  [Lines of Code] - wszystkie linie")
-print("NCNB [Non-comment non-blank] - kod (bez komentarzy i pustych)")
-print("EXEC [Executable statements] - NCNB, bez ifów, forów itp (tylko linie które coś robią)")
-print("CP   [Comment percentage] - Współczynnik ilości komentarzy względem aktywnego kodu")
-print("CC   [Cyclomatic Complexity] - złożoność cykliczna")
-print("WMC  [Weighted method per class] - złożoność cykliczna klasowa")
-### to trzeba ręcznie VVVVV
-print("RFC  [Response for a class] - lepiej policzyć ręcznie")
-print("LCOM [Lack of cohesion of methods] - chujowe")
-print("CBO  [Coupling between object classes] - nwm")
-print("DIT  [Depth of inheritance tree] - to chyba ręcznie się policzy")
-print("NOC  [Number of children] - to chyba też ręcznie")
-print()
+# print("Z prezentacji:")
+# print("LOC  [Lines of Code] - wszystkie linie")
+# print("NCNB [Non-comment non-blank] - kod (bez komentarzy i pustych)")
+# print("EXEC [Executable statements] - NCNB, bez ifów, forów itp (tylko linie które coś robią)")
+# print("CP   [Comment percentage] - Współczynnik ilości komentarzy względem aktywnego kodu")
+# print("CC   [Cyclomatic Complexity] - złożoność cykliczna")
+# print("WMC  [Weighted method per class] - złożoność cykliczna klasowa")
+# ### to trzeba ręcznie VVVVV
+# print("RFC  [Response for a class] - lepiej policzyć ręcznie")
+# print("LCOM [Lack of cohesion of methods] - chujowe")
+# print("CBO  [Coupling between object classes] - nwm")
+# print("DIT  [Depth of inheritance tree] - to chyba ręcznie się policzy")
+# print("NOC  [Number of children] - to chyba też ręcznie")
+# print()
 
-print()
+# print()
 
 OUTFILE = open("out.html", 'w')
 OUTFILE.write("""
@@ -176,6 +177,34 @@ for key in OMEGA_DICT:
         OUTFILE.write("</table>")
     except:
         pass
+
+
+OUTFILE.write("""<table>
+                    <tr>
+                        <th>Klasa</th>
+                        <th>NAI</th>
+                        <th>OCMEC</th>
+                        <th>DIT</th>
+                        <th>PI</th>
+                    </tr>
+                """)
+
+for key in OMEGA_DICT_SIMP:
+    tmp = OMEGA_DICT_SIMP[key]
+    PI = round(1 / (1 + exp(-(-3.97 + 0.464 * tmp["NAI"] + 1.47 * tmp["OCMEC"] + 1.06 * (tmp["DIT"]-1) ))), 3)
+    OUTFILE.write("""
+        <tr>
+            <td>{}</td>
+            <td>{}</td>
+            <td>{}</td>
+            <td>{}</td>
+            <td>{}</td>
+        </tr>
+        """.format(key, tmp["NAI"], tmp["OCMEC"], tmp["DIT"], PI))
+
+OUTFILE.write("</table>")
+
+
 
 OUTFILE.write("""
 

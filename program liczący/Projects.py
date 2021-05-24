@@ -84,136 +84,193 @@ Aquarium = {
 Sudoku = {
     "Difficulty": 
         {
-            "RFC": "9",
-            "LCOM": "8",
-            "CBO": "0",
-            "DIT": "1",
-            "NOC": "0"
+            "RFC": 9,
+            "LCOM": 8,
+            "CBO": 0,
+            "DIT": 1,
+            "NOC": 0,
+
+            "NAI": 2,
+            "OCMEC": 1
         },
 
     "SudokuBoard": 
         {
-            "RFC": "107",
-            "LCOM": "164",
-            "CBO": "4",
-            "DIT": "1",
-            "NOC": "0"
+            "RFC": 107,
+            "LCOM": 164,
+            "CBO": 4,
+            "DIT": 1,
+            "NOC": 0,
+            
+            "NAI": 8,
+            "OCMEC": 2
         },
 
     "SudokuBox": 
         {
-            "RFC": "1",
-            "LCOM": "1",
-            "CBO": "0",
-            "DIT": "2",
-            "NOC": "0"
+            "RFC": 1,
+            "LCOM": 1,
+            "CBO": 0,
+            "DIT": 2,
+            "NOC": 0,
+            
+            "NAI": 0,
+            "OCMEC": 1
         },
 
     "SudokuColumn": 
         {
-            "RFC": "1",
-            "LCOM": "1",
-            "CBO": "0",
-            "DIT": "2",
-            "NOC": "0"
+            "RFC": 1,
+            "LCOM": 1,
+            "CBO": 0,
+            "DIT": 2,
+            "NOC": 0,
+            
+            "NAI": 0,
+            "OCMEC": 1
         },
 
     "SudokuRow": 
         {
-            "RFC": "1",
-            "LCOM": "1",
-            "CBO": "0",
-            "DIT": "2",
-            "NOC": "0"
+            "RFC": 1,
+            "LCOM": 1,
+            "CBO": 0,
+            "DIT": 2,
+            "NOC": 0,
+            
+            "NAI": 0,
+            "OCMEC": 1
         },
 
     "SudokuGroup": 
         {
-            "RFC": "14",
-            "LCOM": "4",
-            "CBO": "0",
-            "DIT": "1",
-            "NOC": "3"
+            "RFC": 14,
+            "LCOM": 4,
+            "CBO": 0,
+            "DIT": 1,
+            "NOC": 3,
+            
+            "NAI": 1,
+            "OCMEC": 1
+        },
+
+    "SudokuField": 
+        {
+            "RFC": 17,
+            "LCOM": 29,
+            "CBO": 0,
+            "DIT": 1,
+            "NOC": 0,
+            
+            "NAI": 5,
+            "OCMEC": 2
         },
 
     "SudokuActionEvent": 
         {
-            "RFC": "0",
-            "LCOM": "0",
-            "CBO": "0",
-            "DIT": "4",
-            "NOC": "0"
+            "RFC": 0,
+            "LCOM": 0,
+            "CBO": 0,
+            "DIT": 4,
+            "NOC": 0,
+            
+            "NAI": 3,
+            "OCMEC": 2
         },
 
     "Dao": 
         {
-            "RFC": "0",
-            "LCOM": "1",
-            "CBO": "0",
-            "DIT": "2",
-            "NOC": "0"
+            "RFC": 0,
+            "LCOM": 1,
+            "CBO": 0,
+            "DIT": 2,
+            "NOC": 0,
+            
+            "NAI": 0,
+            "OCMEC": 0
         },
 
     "FileSudokuBoardDao": 
         {
-            "RFC": "14",
-            "LCOM": "3",
-            "CBO": "3",
-            "DIT": "2",
-            "NOC": ""
+            "RFC": 14,
+            "LCOM": 3,
+            "CBO": 3,
+            "DIT": 2,
+            "NOC": 0,
+            
+            "NAI": 2,
+            "OCMEC": 1
         },
 
     "FileSudokuBoardListDao": 
         {
-            "RFC": "14",
-            "LCOM": "2",
-            "CBO": "3",
-            "DIT": "2",
-            "NOC": ""
+            "RFC": 14,
+            "LCOM": 2,
+            "CBO": 3,
+            "DIT": 2,
+            "NOC": 0,
+            
+            "NAI": 2,
+            "OCMEC": 1
         },
 
     "JpaSudokuBoardDao": 
         {
-            "RFC": "31",
-            "LCOM": "10",
-            "CBO": "2",
-            "DIT": "2",
-            "NOC": "0"
+            "RFC": 31,
+            "LCOM": 10,
+            "CBO": 2,
+            "DIT": 2,
+            "NOC": 0,
+            
+            "NAI": 2,
+            "OCMEC": 1
         },
 
     "SudokuBoardDaoFactory": 
         {
-            "RFC": "4",
-            "LCOM": "9",
-            "CBO": "1",
-            "DIT": "1",
-            "NOC": "0"
+            "RFC": 4,
+            "LCOM": 9,
+            "CBO": 1,
+            "DIT": 1,
+            "NOC": 0,
+            
+            "NAI": 0,
+            "OCMEC": 1
         },
 
     "BacktrackingSudokuSolver": 
         {
-            "RFC": "31",
-            "LCOM": "18",
-            "CBO": "1",
-            "DIT": "2",
-            "NOC": "0"
+            "RFC": 31,
+            "LCOM": 18,
+            "CBO": 1,
+            "DIT": 2,
+            "NOC": 0,
+            
+            "NAI": 1,
+            "OCMEC": 1
         },
 
     "SudokuSolver": 
         {
-            "RFC": "0",
-            "LCOM": "1",
-            "CBO": "1",
-            "DIT": "1",
-            "NOC": "0"
+            "RFC": 0,
+            "LCOM": 1,
+            "CBO": 1,
+            "DIT": 1,
+            "NOC": 0,
+            
+            "NAI": 0,
+            "OCMEC": 0
         },
 
     "Window": 
         {
-            "RFC": "184",
-            "LCOM": "102",
-            "CBO": "7",
-            "DIT": "1",
-            "NOC": "0"
+            "RFC": 184,
+            "LCOM": 102,
+            "CBO": 7,
+            "DIT": 1,
+            "NOC": 0,
+            
+            "NAI": 12,
+            "OCMEC": 0
         },   
 }
